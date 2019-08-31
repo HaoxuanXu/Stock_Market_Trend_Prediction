@@ -12,5 +12,7 @@ alpha-vantage-base = "https://www.alphavantage.co"
 params = {
     "function":"Time_Series_Daily_Adjusted",
     "symbol":"VOO",
-    "outputsize":"full"
+    "outputsize":"compact",
+    "datatype":"csv",
+    "apikey":auth.apikey
 }
