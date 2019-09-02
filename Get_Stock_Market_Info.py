@@ -7,6 +7,7 @@ import json
 
 #from files:
 import auth
+import params
 
 # url_base:
 alpha_vantage_base = "https://www.alphavantage.co"
@@ -20,22 +21,37 @@ technical_indicators = ['SMA', 'EMA', 'MACD', 'STOCH', 'RSI', 'ADX', 'MOM', 'BOP
 
 
 
-def get_index_trend(fund_symbols, outputsize, apikey):
+def get_index_time_series(fund_symbols, outputsize, function, apikey):
     for fund in fund_symbols:
         print('Getting 20-year daily historical data for {}'.format(fund))
-        params = {
+        index_params = {
             "function": "Time_Series_Daily",
             "symbol": fund,
             "outputsize": outputsize,
             "datatype": "json",
             "apikey": apikey
         }
-        r = requests.get(alpha_vantage_base + '/query', params=params)
+        SMA_params = {
+            "function":"SMA",
+            "symbol":fund,
+            "interval":"daily",
+            "time_period":200,
+            "series_type":"open",
+            "apikey":apikey
+        }
+        MACD_params = {
+            "function":function
+        }
+        r = requests.get(alpha_vantage_base + '/query', params=index_params)
         time_series_daily = pd.DataFrame.from_dict(json.loads(r.content)['Time Series (Daily)'], orient='index')
         return time_series_daily
 
-VFINX, VTSMX, FXAIX, SWRSX = get_index_trend(fund_symbols=fund_symbols, outputsize='full', apikey=auth.apikey)
+VFINX, VTSMX, FXAIX, SWRSX = get_index_time_series(fund_symbols=fund_symbols, outputsize='full', apikey=auth.apikey)
 
 
-def get_indicators():
-    
+def get_technical_indicators():
+    params = {
+        "function":function,
+
+    }
+
