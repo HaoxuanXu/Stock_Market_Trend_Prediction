@@ -23,25 +23,12 @@ technical_indicators = ['SMA', 'EMA', 'MACD', 'STOCH', 'RSI', 'ADX', 'MOM', 'BOP
 
 def get_index_time_series(fund_symbols, outputsize, function, apikey):
     for fund in fund_symbols:
-        print('Getting 20-year daily historical data for {}'.format(fund))
-        index_params = {
-            "function": "Time_Series_Daily",
-            "symbol": fund,
-            "outputsize": outputsize,
-            "datatype": "json",
-            "apikey": apikey
-        }
-        SMA_params = {
-            "function": "SMA",
-            "symbol": fund,
-            "interval": "daily",
-            "time_period": 200,
-            "series_type": "open",
-            "apikey": apikey
-        }
-        MACD_params = {
-            "function": function
-        }
+        print('Getting data for {}...'.format(fund))
+        index_params = params.index_params.update(symbol=fund)
+        SMA_params = params.index_params.update(symbol=fund)
+        EMA_open_params = params.EMA_open_params.update(symbol=fund)
+        EMA_close_params = params.EMA_close_params.update(symbol=fund)
+
         r = requests.get(alpha_vantage_base + '/query', params=index_params)
         time_series_daily = pd.DataFrame.from_dict(json.loads(r.content)['Time Series (Daily)'], orient='index')
         return time_series_daily
@@ -50,8 +37,4 @@ def get_index_time_series(fund_symbols, outputsize, function, apikey):
 VFINX, VTSMX, FXAIX, SWRSX = get_index_time_series(fund_symbols=fund_symbols, outputsize='full', apikey=auth.apikey)
 
 
-def get_technical_indicators():
-    params = {
-        "function": function,
 
-    }

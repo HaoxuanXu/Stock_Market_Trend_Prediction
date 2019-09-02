@@ -1,7 +1,12 @@
+# from libraries:
+import datetime as dt
+
+# from files:
+import auth
 
 # This file documents all the parameters for index time-series as well as for technical indicators
 # symbol is omitted in the current parameters and will be added later in the for loop
-import auth
+
 
 '''
 For Index Funds: 
@@ -18,8 +23,30 @@ index_params = {
 }
 '''
 For External Factors (Commodity Price, Exchange Rate) --using Quandl:
+    Global Petroleum Prices (Change in fuel prices--USA)--"US_Petro_params",
+    Wiki Continuous Futures (Minneapolis NSI National Soybean Futures, Continuous Contract #1 (IS1) (Front Month))--"US_Soybean_Futures_params",
+    Wiki Continuous Futures (Minneapolis NCI National Corn Futures, Continuous Contract #1 (IC1) (Front Month))--"US_Corn_Futures_params"
 '''
+US_Petro_params = {
+    "database_code":"GPP",
+    "dataset_code":"CFP_USA",
+    "start_date":str(dt.datetime(year=dt.datetime.now()-20, month=dt.datetime.now(), day=dt.datetime.now())),
+    "end_date":str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
 
+US_Soybean_Futures_params = {
+    "database_code":"CHRIS",
+    "dataset_code":"MGEX_IS1",
+    "start_date":str(dt.datetime(year=dt.datetime.now()-20, month=dt.datetime.now(), day=dt.datetime.now())),
+    "end_date":str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+US_Corn_Futures_params = {
+    "database_code":"CHRIS",
+    "dataset_code":"MGEX_IC1",
+    "start_date":str(dt.datetime(year=dt.datetime.now()-20, month=dt.datetime.now(), day=dt.datetime.now())),
+    "end_date":str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
 '''
 For Technical Indicators:
     Simple Moving Average (SMA) --daily open & daily close,
