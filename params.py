@@ -14,19 +14,40 @@ index_params = {
     "function": "Time_Series_Daily",
     "outputsize": "full",
     "datatype": "json",
-    "apikey": auth.apikey
+    "apikey": auth.apikey_av
 }
+'''
+For External Factors (Commodity Price, Exchange Rate) --using Quandl:
+'''
 
 '''
 For Technical Indicators:
-    Simple Moving Average (SMA) --daily open & daily close
+    Simple Moving Average (SMA) --daily open & daily close,
+    Exponential Moving Average (EMA) --daily open & daily close,
+    Moving Average Convergence / Divergence (MACD) --daily open & daily close,
+    Stochastic Oscillator (STOCH),
+    Relative Strength Index (RSI) --daily open & daily close,
+    Average Directional Movement Index (ADX),
+    Momentum (MOM) --daily open & daily close,
+    Balance of Power (BOP),
+    Commodity Channel Index (CCI),
+    Rate of Change (ROC) --daily open & daily close,
+    Aroon Indicator (AROON),
+    Money Flow Index (MFI),
+    Directional Movement Index (DX),
+    Bollinger Bands Values (BBANDS) --daily open & daily close
+    Parabolic SAR Values (SAR),
+    True Range Values (TRANGE),
+    Chaikin A/D Line Values (AD),
+    On Balance Volume (OBV),
+    Hilbert Transform, Instantaneous Trendline (HT_TRENDLINE) --daily open & daily close
 '''
 SMA_open_params = {
     "function":"SMA",
     "interval":"daily",
     "time_period":200,
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 SMA_close_params = {
@@ -34,7 +55,7 @@ SMA_close_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 EMA_open_params = {
@@ -42,7 +63,7 @@ EMA_open_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 EMA_close_params = {
@@ -50,27 +71,27 @@ EMA_close_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 MACD_open_params = {
     "function":"MACD",
     "interval":"daily",
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 MACD_close_params = {
     "function":"MACD",
     "interval":"daily",
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 STOCH_params = {
     "function":"STOCH",
     "interval":"daily",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 RSI_open_params = {
@@ -78,7 +99,7 @@ RSI_open_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 RSI_close_params = {
@@ -86,14 +107,14 @@ RSI_close_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 ADX_params = {
     "function":"ADX",
     "interval":"daily",
     "time_period":200,
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 MOM_open_params = {
@@ -101,7 +122,7 @@ MOM_open_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 MOM_close_params = {
@@ -109,20 +130,20 @@ MOM_close_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 BOP_params = {
     "function":"BOP",
     "interval":"daily",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 CCI_params = {
     "function":"CCI",
     "interval":"daily",
     "time_period":200,
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 ROC_open_params = {
@@ -130,7 +151,7 @@ ROC_open_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 ROC_close_params = {
@@ -138,28 +159,28 @@ ROC_close_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 AROON_params = {
     "function":"AROON",
     "interval":"daily",
     "time_period":200,
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 MFI_params = {
     "function":"MFI",
     "interval":"daily",
     "time_period":200,
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 DX_params = {
     "function":"DX",
     "interval":"daily",
     "time_period":200,
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 BBANDS_open_params = {
@@ -167,7 +188,7 @@ BBANDS_open_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 BBANDS_close_params = {
@@ -175,43 +196,43 @@ BBANDS_close_params = {
     "interval":"daily",
     "time_period":200,
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 SAR_params = {
     "function":"SAR",
     "interval":"daily",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 TRANGE_params = {
     "function":"TRANGE",
     "interval":"daily",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 AD_params = {
     "function":"AD",
     "interval":"daily",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 OBV_params = {
     "function":"OBV",
     "interval":"daily",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 HT_TRENDLINE_open_params = {
     "function":"HT_TRENDLINE",
     "interval":"daily",
     "series_type":"open",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
 
 HT_TRENDLINE_close_params = {
     "function":"HT_TRENDLINE",
     "interval":"daily",
     "series_type":"close",
-    "apikey":auth.apikey
+    "apikey":auth.apikey_av
 }
