@@ -16,7 +16,7 @@ alpha_vantage_base = "https://www.alphavantage.co"
 fund_symbols = ['VFINX', 'VTSMX', 'FXAIX', 'SWTSX']
 #Extract 20-year historical data for ETF that correspond to Dow Jones, S&P 500, Gold, US Bond Market, and US Dollar Index
 technical_indicators = ['SMA', 'EMA', 'MACD', 'STOCH', 'RSI', 'ADX', 'MOM', 'BOP', 'CCI', 'ROC', 'AROON', 'MFI',
-                        'DX', 'BBANDS', 'AD', 'OBV']
+                        'DX', 'BBANDS', 'SAR', 'TRANGE', 'AD', 'OBV']
 
 
 
