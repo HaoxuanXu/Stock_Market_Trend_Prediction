@@ -1,11 +1,13 @@
+# from libraries
 import requests
 from bs4 import BeautifulSoup
 
+# from files
+import auth
+
 url = "https://www.slickcharts.com/sp500"
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.100 Safari/537.36'
-}
+headers = auth.user_agent
 
 
 def get_sp_500(url, headers):
