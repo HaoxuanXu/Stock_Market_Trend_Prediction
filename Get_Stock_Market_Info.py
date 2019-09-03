@@ -5,16 +5,18 @@ import pandas as pd
 import json
 import os
 import quandl
+import time
 
 # from files:
 import auth
 import params
+import SP_500_companies
 
 # url_base:
 alpha_vantage_base = "https://www.alphavantage.co"
 raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
 # initialization:
-fund_symbols = ['DIA', 'VOO']
+stock_symbols = SP_500_companies.ticker_list
 # Extract 20-year historical data for ETF that correspond to Dow Jones, S&P 500, Gold, US Bond Market, and US Dollar
 # Index
 
@@ -60,6 +62,7 @@ def get_alpha_vantage_data(fund_symbols, param_dict):
     for fund in fund_symbols:
         print('Getting data for {}...'.format(fund))
         for param_name, param_value in param_dict.items():
+            print("Process Begin...")
             param_value["symbol"] = fund
             r = requests.get(alpha_vantage_base + '/query', params=param_value)
             content = json.loads(r.content)
@@ -67,9 +70,11 @@ def get_alpha_vantage_data(fund_symbols, param_dict):
             file_name = ''.join((fund_prefix, (param_name + '.json')))
             with open(os.path.join(raw_data_folder, file_name), "w") as fp:
                 json.dump(content, fp)
+            print("Successfully extracted {}!".format(file_name))
+            print("Process halting...")
+            time.sleep(20)
         print("Data extraction for {} complete!".format(fund))
 
-
-print('Alpha Vantage Data Extraction Process Complete!!')
+    print('Alpha Vantage Data Extraction Process Complete!!')
 
 get_alpha_vantage_data(fund_symbols=fund_symbols, param_dict=param_dict)
