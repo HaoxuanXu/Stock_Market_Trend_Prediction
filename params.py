@@ -23,11 +23,11 @@ index_fund_params = {
 }
 '''
 For External Factors (Commodity Price, Exchange Rate) --using Quandl:
-    Global Petroleum Prices (Change in fuel prices--USA)--"US_Petro_params",
-    Wiki Continuous Futures (Minneapolis NSI National Soybean Futures, Continuous Contract #1 (IS1) (Front Month))--"US_Soybean_Futures_params",
-    Wiki Continuous Futures (Minneapolis NCI National Corn Futures, Continuous Contract #1 (IC1) (Front Month))--"US_Corn_Futures_params"
+    Global Petroleum Prices (Change in fuel prices--USA)--"us_petro_params",
+    Wiki Continuous Futures (Minneapolis NSI National Soybean Futures, Continuous Contract #1 (IS1) (Front Month))--"us_soybean_futures_params",
+    Wiki Continuous Futures (Minneapolis NCI National Corn Futures, Continuous Contract #1 (IC1) (Front Month))--"us_corn_futures_params"
 '''
-US_Petro_params = {
+us_petro_params = {
     "database_code": "GPP",
     "dataset_code": "CFP_USA",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -35,7 +35,7 @@ US_Petro_params = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-US_Soybean_Futures_params = {
+us_soybean_futures_params = {
     "database_code": "CHRIS",
     "dataset_code": "MGEX_IS1",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -43,7 +43,7 @@ US_Soybean_Futures_params = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-US_Corn_Futures_params = {
+us_corn_futures_params = {
     "database_code": "CHRIS",
     "dataset_code": "MGEX_IC1",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -72,7 +72,7 @@ For Technical Indicators:
     On Balance Volume (OBV),
     Hilbert Transform, Instantaneous Trendline (HT_TRENDLINE) --daily open & daily close
 '''
-SMA_open_params = {
+sma_open_params = {
     "function": "SMA",
     "interval": "daily",
     "time_period": 200,
@@ -80,7 +80,7 @@ SMA_open_params = {
     "apikey": auth.apikey_av
 }
 
-SMA_close_params = {
+sma_close_params = {
     "function": "SMA",
     "interval": "daily",
     "time_period": 200,
@@ -88,7 +88,7 @@ SMA_close_params = {
     "apikey": auth.apikey_av
 }
 
-EMA_open_params = {
+ema_open_params = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 200,
@@ -96,7 +96,7 @@ EMA_open_params = {
     "apikey": auth.apikey_av
 }
 
-EMA_close_params = {
+ema_close_params = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 200,
@@ -104,27 +104,27 @@ EMA_close_params = {
     "apikey": auth.apikey_av
 }
 
-MACD_open_params = {
+macd_open_params = {
     "function": "MACD",
     "interval": "daily",
     "series_type": "open",
     "apikey": auth.apikey_av
 }
 
-MACD_close_params = {
+macd_close_params = {
     "function": "MACD",
     "interval": "daily",
     "series_type": "close",
     "apikey": auth.apikey_av
 }
 
-STOCH_params = {
+stoch_params = {
     "function": "STOCH",
     "interval": "daily",
     "apikey": auth.apikey_av
 }
 
-RSI_open_params = {
+rsi_open_params = {
     "function": "RSI",
     "interval": "daily",
     "time_period": 200,
@@ -132,7 +132,7 @@ RSI_open_params = {
     "apikey": auth.apikey_av
 }
 
-RSI_close_params = {
+rsi_close_params = {
     "function": "RSI",
     "interval": "daily",
     "time_period": 200,
@@ -140,14 +140,14 @@ RSI_close_params = {
     "apikey": auth.apikey_av
 }
 
-ADX_params = {
+adx_params = {
     "function": "ADX",
     "interval": "daily",
     "time_period": 200,
     "apikey": auth.apikey_av
 }
 
-MOM_open_params = {
+mom_open_params = {
     "function": "MOM",
     "interval": "daily",
     "time_period": 200,
@@ -155,7 +155,7 @@ MOM_open_params = {
     "apikey": auth.apikey_av
 }
 
-MOM_close_params = {
+mom_close_params = {
     "function": "MOM",
     "interval": "daily",
     "time_period": 200,
@@ -163,20 +163,20 @@ MOM_close_params = {
     "apikey": auth.apikey_av
 }
 
-BOP_params = {
+bop_params = {
     "function": "BOP",
     "interval": "daily",
     "apikey": auth.apikey_av
 }
 
-CCI_params = {
+cci_params = {
     "function": "CCI",
     "interval": "daily",
     "time_period": 200,
     "apikey": auth.apikey_av
 }
 
-ROC_open_params = {
+roc_open_params = {
     "function": "ROC",
     "interval": "daily",
     "time_period": 200,
@@ -184,7 +184,7 @@ ROC_open_params = {
     "apikey": auth.apikey_av
 }
 
-ROC_close_params = {
+roc_close_params = {
     "function": "ROC",
     "interval": "daily",
     "time_period": 200,
@@ -192,28 +192,28 @@ ROC_close_params = {
     "apikey": auth.apikey_av
 }
 
-AROON_params = {
+aroon_params = {
     "function": "AROON",
     "interval": "daily",
     "time_period": 200,
     "apikey": auth.apikey_av
 }
 
-MFI_params = {
+mfi_params = {
     "function": "MFI",
     "interval": "daily",
     "time_period": 200,
     "apikey": auth.apikey_av
 }
 
-DX_params = {
+dx_params = {
     "function": "DX",
     "interval": "daily",
     "time_period": 200,
     "apikey": auth.apikey_av
 }
 
-BBANDS_open_params = {
+bbands_open_params = {
     "function": "BBANDS",
     "interval": "daily",
     "time_period": 200,
@@ -221,7 +221,7 @@ BBANDS_open_params = {
     "apikey": auth.apikey_av
 }
 
-BBANDS_close_params = {
+bbands_close_params = {
     "function": "BBANDS",
     "interval": "daily",
     "time_period": 200,
@@ -229,38 +229,38 @@ BBANDS_close_params = {
     "apikey": auth.apikey_av
 }
 
-SAR_params = {
+sar_params = {
     "function": "SAR",
     "interval": "daily",
     "apikey": auth.apikey_av
 }
 
-TRANGE_params = {
+trange_params = {
     "function": "TRANGE",
     "interval": "daily",
     "apikey": auth.apikey_av
 }
 
-AD_params = {
+ad_params = {
     "function": "AD",
     "interval": "daily",
     "apikey": auth.apikey_av
 }
 
-OBV_params = {
+obv_params = {
     "function": "OBV",
     "interval": "daily",
     "apikey": auth.apikey_av
 }
 
-HT_TRENDLINE_open_params = {
+ht_trendline_open_params = {
     "function": "HT_TRENDLINE",
     "interval": "daily",
     "series_type": "open",
     "apikey": auth.apikey_av
 }
 
-HT_TRENDLINE_close_params = {
+ht_trendline_close_params = {
     "function": "HT_TRENDLINE",
     "interval": "daily",
     "series_type": "close",

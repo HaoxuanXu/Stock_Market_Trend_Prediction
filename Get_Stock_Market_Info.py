@@ -10,55 +10,55 @@ import time
 # from files:
 import auth
 import params
-import SP_500_companies
+import sp_500_companies
 
 # url_base:
 alpha_vantage_base = "https://www.alphavantage.co"
 raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
 # initialization:
-stock_symbols = SP_500_companies.ticker_list
+stock_symbols = sp_500_companies.ticker_list
 # Extract 20-year historical data for ETF that correspond to Dow Jones, S&P 500, Gold, US Bond Market, and US Dollar
 # Index
 
 index_fund_params = params.index_fund_params
-SMA_open_params = params.SMA_open_params
-SMA_close_params = params.SMA_close_params
-EMA_open_params = params.EMA_open_params
-EMA_close_params = params.EMA_close_params
-MACD_open_params = params.MACD_open_params
-MACD_close_params = params.MACD_close_params
-STOCH_params = params.STOCH_params
-RSI_open_params = params.RSI_open_params
-RSI_close_params = params.RSI_close_params
-ADX_params = params.ADX_params
-MOM_open_params = params.MOM_open_params
-MOM_close_params = params.MOM_close_params
-BOP_params = params.BOP_params
-CCI_params = params.CCI_params
-ROC_open_params = params.ROC_open_params
-ROC_close_params = params.ROC_close_params
-AROON_params = params.AROON_params
-MFI_params = params.MFI_params
-DX_params = params.DX_params
-BBANDS_open_params = params.BBANDS_open_params
-BBANDS_close_params = params.BBANDS_close_params
-SAR_params = params.SAR_params
-TRANGE_params = params.TRANGE_params
-AD_params = params.AD_params
-OBV_params = params.OBV_params
-HT_TRENDLINE_open_params = params.HT_TRENDLINE_open_params
-HT_TRENDLINE_close_params = params.HT_TRENDLINE_close_params
+sma_open_params = params.sma_open_params
+sma_close_params = params.sma_close_params
+ema_open_params = params.ema_open_params
+ema_close_params = params.ema_close_params
+macd_open_params = params.macd_open_params
+macd_close_params = params.macd_close_params
+stoch_params = params.stoch_params
+rsi_open_params = params.rsi_open_params
+rsi_close_params = params.rsi_close_params
+adx_params = params.adx_params
+mom_open_params = params.mom_open_params
+mom_close_params = params.mom_close_params
+bop_params = params.bop_params
+cci_params = params.cci_params
+roc_open_params = params.roc_open_params
+roc_close_params = params.roc_close_params
+aroon_params = params.aroon_params
+mfi_params = params.mfi_params
+dx_params = params.dx_params
+bbands_open_params = params.bbands_open_params
+bbands_close_params = params.bbands_close_params
+sar_params = params.sar_params
+trange_params = params.trange_params
+ad_params = params.ad_params
+obv_params = params.obv_params
+ht_trendline_open_params = params.ht_trendline_open_params
+ht_trendline_close_params = params.ht_trendline_close_params
 
-param_dict = {"index_fund": index_fund_params, "SMA_open":SMA_open_params, "SMA_close": SMA_close_params, "EMA_open": EMA_open_params,
-              "EMA_close": EMA_close_params, "MACD_open": MACD_open_params, "MACD_close": MACD_close_params, "STOCH": STOCH_params,
-              "RSI_open": RSI_open_params, "RSI_close": RSI_close_params, "ADX": ADX_params, "MOM_open": MOM_open_params,
-              "MOM_close": MOM_close_params, "BOP": BOP_params, "CCI": CCI_params, "ROC_open": ROC_open_params, "ROC_close": ROC_close_params,
-              "AROON": AROON_params, "MFI": MFI_params, "DX": DX_params, "BBANDS_open": BBANDS_open_params, "BBANDS_close": BBANDS_close_params,
-              "SAR": SAR_params, "TRANGE": TRANGE_params, "AD": AD_params, "OBV": OBV_params, "HT_TRENDLINE_open": HT_TRENDLINE_open_params,
-              "HT_TRENDLINE_close": HT_TRENDLINE_close_params}
+param_dict = {"index_fund": index_fund_params, "sma_open":sma_open_params, "sma_close": sma_close_params, "ema_open": ema_open_params,
+              "ema_close": ema_close_params, "macd_open": macd_open_params, "macd_close": macd_close_params, "stoch": stoch_params,
+              "rsi_open": rsi_open_params, "rsi_close": rsi_close_params, "adx": adx_params, "mom_open": mom_open_params,
+              "mom_close": mom_close_params, "bop": bop_params, "cci": cci_params, "roc_open": roc_open_params, "roc_close": roc_close_params,
+              "aroon": aroon_params, "mfi": mfi_params, "dx": dx_params, "bbands_open": bbands_open_params, "bbands_close": bbands_close_params,
+              "sar": sar_params, "trange": trange_params, "ad": ad_params, "obv": obv_params, "ht_trendline_open": ht_trendline_open_params,
+              "ht_trendline_close": ht_trendline_close_params}
 
 
-def get_alpha_vantage_data(fund_symbols, param_dict):
+def get_alpha_vantage_data(stock_symbols, param_dict):
     for fund in fund_symbols:
         print('Getting data for {}...'.format(fund))
         for param_name, param_value in param_dict.items():
@@ -77,4 +77,4 @@ def get_alpha_vantage_data(fund_symbols, param_dict):
 
     print('Alpha Vantage Data Extraction Process Complete!!')
 
-get_alpha_vantage_data(fund_symbols=fund_symbols, param_dict=param_dict)
+get_alpha_vantage_data(stock_symbols=stock_symbols, param_dict=param_dict)
