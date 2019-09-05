@@ -43,9 +43,8 @@ def get_alpha_vantage_data(symbols):
             time.sleep(20)
         stock_attribute_dask = dd.concat(stock_attribute_df_list, axis=1)
         stock_info_list.append(stock_attribute_dask)
-    sp_500_data = dd.concat(stock_info_list, axis=0)
         print("Data extraction for {} complete!".format(stock_symbol))
-
+    sp_500_data = dd.concat(stock_info_list, axis=0)
     print('Alpha Vantage Data Extraction Process Complete!!')
 
 
