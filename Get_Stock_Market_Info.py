@@ -35,7 +35,7 @@ def get_alpha_vantage_data(symbols):
             r = requests.get(alpha_vantage_base + '/query', params=param_value, headers=auth.user_agent)
             df = pd.read_csv(io.StringIO(r.content.decode('utf-8'))).set_index('timestamp')
             df["stock_symbol"] = stock_symbol
-            dask_df = dd.from_pandas(df, npartitions=)
+            dask_df = dd.from_pandas(df, npartitions=3)
             stock_attribute_df_list.append(dask_df)
 
             print("Successfully extracted {}!".format(param_name))
