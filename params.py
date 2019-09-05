@@ -18,7 +18,7 @@ For Index Funds:
 index_fund_params = {
     "function": "Time_Series_Daily",
     "outputsize": "full",
-    "datatype": "json",
+    "datatype": "csv",
     "apikey": auth.apikey_av
 }
 '''
@@ -77,6 +77,7 @@ sma_open_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -85,6 +86,7 @@ sma_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -93,6 +95,7 @@ ema_open_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -101,6 +104,7 @@ ema_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -108,6 +112,7 @@ macd_open_params = {
     "function": "MACD",
     "interval": "daily",
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -115,12 +120,14 @@ macd_close_params = {
     "function": "MACD",
     "interval": "daily",
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
 stoch_params = {
     "function": "STOCH",
     "interval": "daily",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -129,6 +136,7 @@ rsi_open_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -137,6 +145,7 @@ rsi_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -144,6 +153,7 @@ adx_params = {
     "function": "ADX",
     "interval": "daily",
     "time_period": 200,
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -152,6 +162,7 @@ mom_open_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -160,12 +171,14 @@ mom_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
 bop_params = {
     "function": "BOP",
     "interval": "daily",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -173,6 +186,7 @@ cci_params = {
     "function": "CCI",
     "interval": "daily",
     "time_period": 200,
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -181,6 +195,7 @@ roc_open_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -189,6 +204,7 @@ roc_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -196,6 +212,7 @@ aroon_params = {
     "function": "AROON",
     "interval": "daily",
     "time_period": 200,
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -203,6 +220,7 @@ mfi_params = {
     "function": "MFI",
     "interval": "daily",
     "time_period": 200,
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -210,6 +228,7 @@ dx_params = {
     "function": "DX",
     "interval": "daily",
     "time_period": 200,
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -218,6 +237,7 @@ bbands_open_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -226,30 +246,35 @@ bbands_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
 sar_params = {
     "function": "SAR",
     "interval": "daily",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
 trange_params = {
     "function": "TRANGE",
     "interval": "daily",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
 ad_params = {
     "function": "AD",
     "interval": "daily",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
 obv_params = {
     "function": "OBV",
     "interval": "daily",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -257,6 +282,7 @@ ht_trendline_open_params = {
     "function": "HT_TRENDLINE",
     "interval": "daily",
     "series_type": "open",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
@@ -264,5 +290,6 @@ ht_trendline_close_params = {
     "function": "HT_TRENDLINE",
     "interval": "daily",
     "series_type": "close",
+    "datatype":"csv",
     "apikey": auth.apikey_av
 }

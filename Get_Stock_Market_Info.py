@@ -12,8 +12,7 @@ import auth
 import params
 import sp_500_companies
 
-# url_base:
-alpha_vantage_base = "https://www.alphavantage.co"
+
 raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
 # initialization:
 stock_symbols = sp_500_companies.ticker_list
@@ -22,6 +21,7 @@ stock_symbols = sp_500_companies.ticker_list
 
 
 def get_alpha_vantage_data(symbols):
+    alpha_vantage_base = "https://www.alphavantage.co"  # url base
     param_dict_names = [name for name in dir(params) if ('params' in name)]
     param_dict_keys = [key.replace('_params', '') for key in dir(params) if ('params' in key)]
     param_dict = {key: getattr(params, name) for key in param_dict_keys for name in param_dict_names}
