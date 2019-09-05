@@ -27,7 +27,7 @@ For External Factors (Commodity Price, Exchange Rate) --using Quandl:
     Wiki Continuous Futures (Minneapolis NSI National Soybean Futures, Continuous Contract #1 (IS1) (Front Month))--"us_soybean_futures_params",
     Wiki Continuous Futures (Minneapolis NCI National Corn Futures, Continuous Contract #1 (IC1) (Front Month))--"us_corn_futures_params"
 '''
-us_petro_params = {
+us_petro_parameters = {
     "database_code": "GPP",
     "dataset_code": "CFP_USA",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -35,7 +35,7 @@ us_petro_params = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-us_soybean_futures_params = {
+us_soybean_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "MGEX_IS1",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -43,7 +43,7 @@ us_soybean_futures_params = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-us_corn_futures_params = {
+us_corn_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "MGEX_IC1",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
