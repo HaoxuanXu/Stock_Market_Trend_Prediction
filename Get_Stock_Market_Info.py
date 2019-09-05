@@ -4,6 +4,7 @@ import requests
 import pandas as pd
 import dask.dataframe as dd
 import io
+import boto3
 import quandl
 import time
 
@@ -20,7 +21,7 @@ stock_symbols = sp_500_companies.ticker_list
 # Index
 
 
-def get_alpha_vantage_data(symbols):
+def get_alpha_vantage_data(symbols, path):
     stock_info_list = []
     alpha_vantage_base = "https://www.alphavantage.co"  # url base
     param_dict_names = [name for name in dir(params) if ('params' in name)]
@@ -45,7 +46,9 @@ def get_alpha_vantage_data(symbols):
         stock_info_list.append(stock_attribute_dask)
         print("Data extraction for {} complete!".format(stock_symbol))
     sp_500_data = dd.concat(stock_info_list, axis=0)
+    dd.to_parquet(sp_500_data, path)
+
     print('Alpha Vantage Data Extraction Process Complete!!')
 
 
-get_alpha_vantage_data(symbols=stock_symbols)
+get_alpha_vantage_data(symbols=stock_symbols, path=raw_data_folder+"sp500.parquet")
