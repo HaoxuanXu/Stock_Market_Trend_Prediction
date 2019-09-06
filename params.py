@@ -15,7 +15,7 @@ For Index Funds:
     Fidelity 500 Index Fund (FXAIX),
     Schwab Total Stock Market Index Fund (SWTSX)
 '''
-index_fund_params = {
+stock_time_series_params = {
     "function": "Time_Series_Daily",
     "outputsize": "full",
     "datatype": "csv",
@@ -23,21 +23,24 @@ index_fund_params = {
 }
 '''
 For External Factors (Commodity Price, Exchange Rate) --using Quandl:
-    Global Petroleum Prices (Change in fuel prices--USA)--"us_petro_params",
-    Wiki Continuous Futures (Minneapolis NSI National Soybean Futures, Continuous Contract #1 (IS1) (Front Month))--"us_soybean_futures_params",
-    Wiki Continuous Futures (Minneapolis NCI National Corn Futures, Continuous Contract #1 (IC1) (Front Month))--"us_corn_futures_params"
+    Wiki Continuous Futures (Soybean Futures, Continuous Contract #2 (S2))--"us_soybean_futures_parameters",
+    Wiki Continuous Futures (Corn Futures, Continuous Contract #2 (EMA2))--"us_corn_futures_parameters",
+    US Treasury (Treasury Yield Curve Rates)--"us_treasury_yield_parameters",
+    Wiki Continuous Futures (US Dollar Index Futures, Continuous Contract)--"us_dollar_index_futures_parameters",
+    Wiki Continuous Futures (30 Day Federal Funds Futures, Continuous Contract #16 (FF16))--"thirty_day_fed_fund_futures_parameters",
+    Wiki Continuous Futures (S&P 500 Futures, Continuous Contract #1 (SP1) (Front Month))--"sp500_futures_parameters",
+    Wiki Continuous Futures (Gold Futures, Continuous Contract #2 (GC2))--"gold_futures_parameters",
+    Wiki Continuous Futures (E-mini Crude Oil Futures, Continuous Contract #1 (QM1) (Front Month))--"crude_oil_futures_parameters",
+    Corporate Bond Yield Rates (US Corporate Bond Index Yield)--"us_corporate_bond_index_yield_parameters",
+    Wiki Continuous Futures (Random Length Lumber Futures, Continuous Contract #1 (LB1) (Front Month))--"lumber_futures_parameters",
+    Wiki Continuous Futures (Cotton No. 2 Futures, Continuous Contract)--"cotton_futures_parameters",
+    Wiki Continuous Futures (Wheat Futures, Continuous Contract #6 (W6))--"wheat_futures_parameters",
+    Wiki Continuous Futures (Coffee C Futures, Continuous Contract)--"coffee_futures_parameters"
 '''
-us_petro_parameters = {
-    "database_code": "GPP",
-    "dataset_code": "CFP_USA",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
 
 us_soybean_futures_parameters = {
     "database_code": "CHRIS",
-    "dataset_code": "MGEX_IS1",
+    "dataset_code": "CME_S2",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
                                   day=dt.datetime.now().day)),
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
@@ -45,7 +48,95 @@ us_soybean_futures_parameters = {
 
 us_corn_futures_parameters = {
     "database_code": "CHRIS",
-    "dataset_code": "MGEX_IC1",
+    "dataset_code": "LIFFE_EMA2",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+us_treasury_yield_parameters = {
+    "database_code": "USTREASURY",
+    "dataset_code": "REALYIELD",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+us_dollar_index_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "ICE_DX2",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+thirty_day_fed_fund_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_FF16",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+sp500_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_SP1",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+gold_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_GC2",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+crude_oil_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_QM1",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+us_corporate_bond_index_yield_parameters = {
+    "database_code": "ML",
+    "dataset_code": "USEY",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+lumber_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_LB1",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+cotton_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "ICE_CT3",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+wheat_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_W6",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
+
+coffee_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "ICE_KC5",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
                                   day=dt.datetime.now().day)),
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
