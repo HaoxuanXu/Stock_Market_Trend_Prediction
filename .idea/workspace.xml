@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="711fe033-b480-4472-b796-28c88b8bfe5c" name="Default Changelist" comment="">
+    <list default="true" id="711fe033-b480-4472-b796-28c88b8bfe5c" name="Default Changelist" comment="adding if condition on the 'symbol' column">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_stock_market_info.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_stock_market_info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_stock_market_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_stock_market_data.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +107,14 @@
       <option name="presentableId" value="Default" />
       <updated>1567284614109</updated>
     </task>
+    <task id="LOCAL-00001" summary="adding if condition on the 'symbol' column">
+      <created>1567740323509</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567740323509</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,5 +129,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="adding if condition on the 'symbol' column" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding if condition on the 'symbol' column" />
   </component>
 </project>

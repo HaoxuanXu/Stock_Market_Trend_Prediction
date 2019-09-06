@@ -4,7 +4,7 @@ import requests
 import pandas as pd
 import dask.dataframe as dd
 import io
-import boto3
+import s3fs
 import quandl
 import time
 
@@ -54,3 +54,5 @@ def get_alpha_vantage_data(symbols):
 
 def get_quandl_data():
 
+
+def write_data_to_s3():
