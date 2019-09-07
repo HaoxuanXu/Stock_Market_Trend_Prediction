@@ -67,4 +67,7 @@ def get_quandl_data(quandl_params):  #indicators are a list of the names of exte
 
 
 
-def write_data_to_s3():
+def write_data_to_s3(df, bucket_name, file_name):
+    s3 = s3fs.S3FileSystem(anon=False, key=auth.aws_access_key_id, secret=auth.aws_secret_access_key)
+    with s3.open("{}/{}.csv",format(bucket_name, file_name), "w") as f:
+        df.to_csv(f)
