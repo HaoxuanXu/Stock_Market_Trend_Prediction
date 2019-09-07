@@ -9,14 +9,11 @@ import auth
 
 
 '''
-For Index Funds: 
-    Vanguard 500 Index Fund Investor Share (VFINX),
-    Vanguard Total Stock Market Index Fund (VTSMX),
-    Fidelity 500 Index Fund (FXAIX),
-    Schwab Total Stock Market Index Fund (SWTSX)
+For Stock Time-series: 
+    All current companies listed in S&P 500
 '''
-stock_time_series_params = {
-    "function": "Time_Series_Daily",
+stock_time_series_adjusted_params = {
+    "function": "TIME_SERIES_DAILY_ADJUSTED",
     "outputsize": "full",
     "datatype": "csv",
     "apikey": auth.apikey_av
