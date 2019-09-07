@@ -26,23 +26,23 @@ def get_alpha_vantage_data(symbols):
     stock_info_list = []
     alpha_vantage_base = "https://www.alphavantage.co"  # url base
     param_dict_names = [name for name in dir(params) if ('params' in name)]
-    param_dict = {name: getattr(params, name) for name in param_dict_names}
-    param_dict = {name.replace('_params', ''): value for name, value in param_dict.items()}
+    param_dict_list = [getattr(params, name) for name in param_dict_names]
     for stock_symbol in symbols:
         stock_attribute_df_list = []
         print('Getting data for {}...'.format(stock_symbol))
-        for param_name, param_value in param_dict.items():
+        for i in range(len(param_dict_list)):
             print("Process Begin...")
-            param_value["symbol"] = stock_symbol
-            r = requests.get(alpha_vantage_base + '/query', params=param_value, headers=auth.user_agent)
+            param_dict_list[i]["symbol"] = stock_symbol
+            r = requests.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
+            print("step 2")
             df = pd.read_csv(io.StringIO(r.content.decode('utf-8')))
             df.set_index(df.columns[0], inplace=True)
-            if param_name == "stock_time_series":
+            df.add_prefix(param_dict_names[i].replace("_params",""))
+            if param_dict_list[i]["function"] == "TIME_SERIES_DAILY_ADJUSTED":
                 df["stock_symbol"] = stock_symbol
             d_df = dd.from_pandas(df, npartitions=5)
-            stock_attribute_df_list.append(d_df)
-
-            print("Successfully extracted {}!".format(param_name))
+            stock_attribute_df_list.append(df)
+            print("Successfully extracted {}!".format(param_dict_list[i]["function"]))
             print("Process halting...")
             time.sleep(20)
         stock_attribute_d = dd.concat(stock_attribute_df_list, axis=1)
