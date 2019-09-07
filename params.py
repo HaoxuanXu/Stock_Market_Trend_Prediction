@@ -143,11 +143,10 @@ coffee_futures_parameters = {
 }
 '''
 For Technical Indicators:
-    Simple Moving Average (SMA) --daily open & daily close,
-    Exponential Moving Average (EMA) --daily open & daily close,
-    Moving Average Convergence / Divergence (MACD) --daily open & daily close,
+    Exponential Moving Average (EMA) --open & close & high & low,
+    Moving Average Convergence / Divergence (MACD) --open & close & high & low,
     Stochastic Oscillator (STOCH),
-    Relative Strength Index (RSI) --daily open & daily close,
+    Relative Strength Index (RSI) --open & close & high & low,
     Average Directional Movement Index (ADX),
     Momentum (MOM) --daily open & daily close,
     Balance of Power (BOP),
@@ -163,25 +162,8 @@ For Technical Indicators:
     On Balance Volume (OBV),
     Hilbert Transform, Instantaneous Trendline (HT_TRENDLINE) --daily open & daily close
 '''
-sma_open_params = {
-    "function": "SMA",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
 
-sma_close_params = {
-    "function": "SMA",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "close",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-ema_open_params = {
+ema_open_params_200 = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 200,
@@ -199,6 +181,24 @@ ema_close_params = {
     "apikey": auth.apikey_av
 }
 
+ema_high_params = {
+    "function": "EMA",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "close",
+    "datatype":"csv",
+    "apikey": auth.apikey_av
+}
+
+ema_low_params = {
+    "function": "EMA",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "low",
+    "datatype":"csv",
+    "apikey": auth.apikey_av
+}
+
 macd_open_params = {
     "function": "MACD",
     "interval": "daily",
@@ -211,6 +211,22 @@ macd_close_params = {
     "function": "MACD",
     "interval": "daily",
     "series_type": "close",
+    "datatype":"csv",
+    "apikey": auth.apikey_av
+}
+
+macd_high_params = {
+    "function": "MACD",
+    "interval": "daily",
+    "series_type": "high",
+    "datatype":"csv",
+    "apikey": auth.apikey_av
+}
+
+macd_low_params = {
+    "function": "MACD",
+    "interval": "daily",
+    "series_type": "low",
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
@@ -236,6 +252,24 @@ rsi_close_params = {
     "interval": "daily",
     "time_period": 200,
     "series_type": "close",
+    "datatype":"csv",
+    "apikey": auth.apikey_av
+}
+
+rsi_high_params = {
+    "function": "RSI",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "high",
+    "datatype":"csv",
+    "apikey": auth.apikey_av
+}
+
+rsi_low_params = {
+    "function": "RSI",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "low",
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
