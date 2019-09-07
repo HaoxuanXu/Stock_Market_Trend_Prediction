@@ -16,7 +16,7 @@ stock_time_series_adjusted_params = {
     "function": "TIME_SERIES_DAILY_ADJUSTED",
     "outputsize": "full",
     "datatype": "csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 '''
 For External Factors (Commodity Price, Exchange Rate) --using Quandl:
@@ -157,7 +157,7 @@ ema_open_params_200 = {
     "time_period": 200,
     "series_type": "open",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 ema_close_params = {
@@ -166,7 +166,7 @@ ema_close_params = {
     "time_period": 200,
     "series_type": "close",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 ema_high_params = {
@@ -175,7 +175,7 @@ ema_high_params = {
     "time_period": 200,
     "series_type": "close",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 ema_low_params = {
@@ -184,7 +184,7 @@ ema_low_params = {
     "time_period": 200,
     "series_type": "low",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 macd_open_params = {
@@ -192,7 +192,7 @@ macd_open_params = {
     "interval": "daily",
     "series_type": "open",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 macd_close_params = {
@@ -200,7 +200,7 @@ macd_close_params = {
     "interval": "daily",
     "series_type": "close",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 macd_high_params = {
@@ -208,7 +208,7 @@ macd_high_params = {
     "interval": "daily",
     "series_type": "high",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 macd_low_params = {
@@ -216,14 +216,14 @@ macd_low_params = {
     "interval": "daily",
     "series_type": "low",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 stoch_params = {
     "function": "STOCH",
     "interval": "daily",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 rsi_open_params = {
@@ -232,7 +232,7 @@ rsi_open_params = {
     "time_period": 14,
     "series_type": "open",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 rsi_close_params = {
@@ -241,7 +241,7 @@ rsi_close_params = {
     "time_period": 14,
     "series_type": "close",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 rsi_high_params = {
@@ -250,7 +250,7 @@ rsi_high_params = {
     "time_period": 14,
     "series_type": "high",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 rsi_low_params = {
@@ -259,7 +259,7 @@ rsi_low_params = {
     "time_period": 14,
     "series_type": "low",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 cci_params = {
@@ -267,7 +267,7 @@ cci_params = {
     "interval": "daily",
     "time_period": 14,
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 aroon_params = {
@@ -275,7 +275,7 @@ aroon_params = {
     "interval": "daily",
     "time_period": 14,
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 bbands_open_params = {
@@ -284,7 +284,7 @@ bbands_open_params = {
     "time_period": 20,
     "series_type": "open",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 bbands_close_params = {
@@ -293,7 +293,7 @@ bbands_close_params = {
     "time_period": 20,
     "series_type": "close",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 bbands_high_params = {
@@ -302,7 +302,7 @@ bbands_high_params = {
     "time_period": 20,
     "series_type": "high",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 bbands_low_params = {
@@ -311,21 +311,21 @@ bbands_low_params = {
     "time_period": 20,
     "series_type": "low",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 ad_params = {
     "function": "AD",
     "interval": "daily",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 obv_params = {
     "function": "OBV",
     "interval": "daily",
     "datatype":"csv",
-    "apikey": auth.apikey_av
+    "apikey": auth.apikey_av_premium
 }
 
 

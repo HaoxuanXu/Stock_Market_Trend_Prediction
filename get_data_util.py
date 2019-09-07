@@ -2,6 +2,7 @@
 # from libraries
 import requests
 import pandas as pd
+import random
 import dask.dataframe as dd
 import io
 import s3fs
@@ -11,7 +12,7 @@ import time
 # from files:
 import auth
 import params
-import sp_500_companies
+import get_sp500_util
 
 # raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
 # initialization:
@@ -34,7 +35,6 @@ def get_alpha_vantage_data(symbols):
             print("Process Begin...")
             param_dict_list[i]["symbol"] = stock_symbol
             r = requests.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
-            print("step 2")
             df = pd.read_csv(io.StringIO(r.content.decode('utf-8')))
             df.set_index(df.columns[0], inplace=True)
             df.add_prefix(param_dict_names[i].replace("_params",""))
@@ -42,9 +42,9 @@ def get_alpha_vantage_data(symbols):
                 df["stock_symbol"] = stock_symbol
             d_df = dd.from_pandas(df, npartitions=5)
             stock_attribute_df_list.append(df)
-            print("Successfully extracted {}!".format(param_dict_list[i]["function"]))
+            print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
             print("Process halting...")
-            time.sleep(20)
+            time.sleep(random.randint(1,2))
         stock_attribute_d = dd.concat(stock_attribute_df_list, axis=1)
         stock_info_list.append(stock_attribute_d)
         print("Data extraction for {} complete!".format(stock_symbol))

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="711fe033-b480-4472-b796-28c88b8bfe5c" name="Default Changelist" comment="adding if condition on the 'symbol' column">
-      <change afterPath="$PROJECT_DIR$/Data Extraction.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/get_sp500_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/testing-checkpoint.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testing.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data Extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data Extraction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SP_500_companies.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_data_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -62,7 +63,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data Extraction.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\John Xu\Desktop\Stock_Market_Trend_Prediction\data_extraction_pipeline.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -158,16 +159,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="adding if condition on the 'symbol' column" />
     <option name="LAST_COMMIT_MESSAGE" value="adding if condition on the 'symbol' column" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/sp_500_companies.py</url>
-          <line>12</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
