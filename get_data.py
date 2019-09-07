@@ -37,7 +37,7 @@ def get_alpha_vantage_data(symbols):
             df = pd.read_csv(io.StringIO(r.content.decode('utf-8'))).set_index('timestamp')
             if param_name == "stock_time_series":
                 df["stock_symbol"] = stock_symbol
-            d_df = dd.from_pandas(df, npartitions=3)
+            d_df = dd.from_pandas(df, npartitions=5)
             stock_attribute_df_list.append(d_df)
 
             print("Successfully extracted {}!".format(param_name))
@@ -52,7 +52,20 @@ def get_alpha_vantage_data(symbols):
     print('Alpha Vantage Data Extraction Process Complete!!')
 
 
-def get_quandl_data():
+def get_quandl_data():  #indicators are a list of the names of external indicators
+    quandl.ApiConfig.api_key = auth.apikey_quandl
+    quandl_params = [value for value in dir(params) if ("_parameters" in value)]
+    indicator_data_list = []
+    for param in quandl_params:
+        dict_ = getattr(params, param)
+        data = quandl.get("{}/{}".format(dict_["database_code"], dict_["dataset_code"]),
+                          start_date=dict_["start_date"], end_date=dict_["end_date"])
+        dd_data = dd.from_pandas(data, npartitions=5)
+        indicator_data_list.append(dd_data)
+    concat_indicators_dd = dd.concat(indicator_data_list, axis=1)
+    return concat_indicators_dd
+
+
 
 
 def write_data_to_s3():
