@@ -143,24 +143,15 @@ coffee_futures_parameters = {
 }
 '''
 For Technical Indicators:
-    Exponential Moving Average (EMA) --open & close & high & low,
+    200 Day Exponential Moving Average (EMA) --open & close & high & low,
     Moving Average Convergence / Divergence (MACD) --open & close & high & low,
     Stochastic Oscillator (STOCH),
     Relative Strength Index (RSI) --open & close & high & low,
-    Average Directional Movement Index (ADX),
-    Momentum (MOM) --daily open & daily close,
-    Balance of Power (BOP),
     Commodity Channel Index (CCI),
-    Rate of Change (ROC) --daily open & daily close,
     Aroon Indicator (AROON),
-    Money Flow Index (MFI),
-    Directional Movement Index (DX),
-    Bollinger Bands Values (BBANDS) --daily open & daily close
-    Parabolic SAR Values (SAR),
-    True Range Values (TRANGE),
+    Bollinger Bands Values (BBANDS) --open & close & high & low,
     Chaikin A/D Line Values (AD),
     On Balance Volume (OBV),
-    Hilbert Transform, Instantaneous Trendline (HT_TRENDLINE) --daily open & daily close
 '''
 
 ema_open_params_200 = {
@@ -241,7 +232,7 @@ stoch_params = {
 rsi_open_params = {
     "function": "RSI",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 14,
     "series_type": "open",
     "datatype":"csv",
     "apikey": auth.apikey_av
@@ -250,7 +241,7 @@ rsi_open_params = {
 rsi_close_params = {
     "function": "RSI",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 14,
     "series_type": "close",
     "datatype":"csv",
     "apikey": auth.apikey_av
@@ -259,7 +250,7 @@ rsi_close_params = {
 rsi_high_params = {
     "function": "RSI",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 14,
     "series_type": "high",
     "datatype":"csv",
     "apikey": auth.apikey_av
@@ -268,41 +259,8 @@ rsi_high_params = {
 rsi_low_params = {
     "function": "RSI",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 14,
     "series_type": "low",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-adx_params = {
-    "function": "ADX",
-    "interval": "daily",
-    "time_period": 200,
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-mom_open_params = {
-    "function": "MOM",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-mom_close_params = {
-    "function": "MOM",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "close",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-bop_params = {
-    "function": "BOP",
-    "interval": "daily",
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
@@ -310,25 +268,7 @@ bop_params = {
 cci_params = {
     "function": "CCI",
     "interval": "daily",
-    "time_period": 200,
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-roc_open_params = {
-    "function": "ROC",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-roc_close_params = {
-    "function": "ROC",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "close",
+    "time_period": 14,
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
@@ -336,23 +276,7 @@ roc_close_params = {
 aroon_params = {
     "function": "AROON",
     "interval": "daily",
-    "time_period": 200,
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-mfi_params = {
-    "function": "MFI",
-    "interval": "daily",
-    "time_period": 200,
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
-
-dx_params = {
-    "function": "DX",
-    "interval": "daily",
-    "time_period": 200,
+    "time_period": 14,
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
@@ -360,7 +284,7 @@ dx_params = {
 bbands_open_params = {
     "function": "BBANDS",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 20,
     "series_type": "open",
     "datatype":"csv",
     "apikey": auth.apikey_av
@@ -369,22 +293,26 @@ bbands_open_params = {
 bbands_close_params = {
     "function": "BBANDS",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 20,
     "series_type": "close",
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
-sar_params = {
-    "function": "SAR",
+bbands_high_params = {
+    "function": "BBANDS",
     "interval": "daily",
+    "time_period": 20,
+    "series_type": "high",
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
 
-trange_params = {
-    "function": "TRANGE",
+bbands_low_params = {
+    "function": "BBANDS",
     "interval": "daily",
+    "time_period": 20,
+    "series_type": "low",
     "datatype":"csv",
     "apikey": auth.apikey_av
 }
@@ -403,18 +331,4 @@ obv_params = {
     "apikey": auth.apikey_av
 }
 
-ht_trendline_open_params = {
-    "function": "HT_TRENDLINE",
-    "interval": "daily",
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}
 
-ht_trendline_close_params = {
-    "function": "HT_TRENDLINE",
-    "interval": "daily",
-    "series_type": "close",
-    "datatype":"csv",
-    "apikey": auth.apikey_av
-}

@@ -52,9 +52,8 @@ def get_alpha_vantage_data(symbols):
     print('Alpha Vantage Data Extraction Process Complete!!')
 
 
-def get_quandl_data():  #indicators are a list of the names of external indicators
+def get_quandl_data(quandl_params):  #indicators are a list of the names of external indicators
     quandl.ApiConfig.api_key = auth.apikey_quandl
-    quandl_params = [value for value in dir(params) if ("_parameters" in value)]
     indicator_data_list = []
     for param in quandl_params:
         dict_ = getattr(params, param)
