@@ -13,10 +13,11 @@ import auth
 import params
 import sp_500_companies
 
-
-raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
+# raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
 # initialization:
-stock_symbols = sp_500_companies.ticker_list
+# stock_symbols = sp_500_companies.ticker_list
+
+
 # Extract 20-year historical data for ETF that correspond to Dow Jones, S&P 500, Gold, US Bond Market, and US Dollar
 # Index
 
@@ -34,7 +35,8 @@ def get_alpha_vantage_data(symbols):
             print("Process Begin...")
             param_value["symbol"] = stock_symbol
             r = requests.get(alpha_vantage_base + '/query', params=param_value, headers=auth.user_agent)
-            df = pd.read_csv(io.StringIO(r.content.decode('utf-8'))).set_index('timestamp')
+            df = pd.read_csv(io.StringIO(r.content.decode('utf-8')))
+            df.set_index(df.columns[0], inplace=True)
             if param_name == "stock_time_series":
                 df["stock_symbol"] = stock_symbol
             d_df = dd.from_pandas(df, npartitions=5)
@@ -52,7 +54,7 @@ def get_alpha_vantage_data(symbols):
     print('Alpha Vantage Data Extraction Process Complete!!')
 
 
-def get_quandl_data(quandl_params):  #indicators are a list of the names of external indicators
+def get_quandl_data(quandl_params):  # indicators are a list of the names of external indicators
     quandl.ApiConfig.api_key = auth.apikey_quandl
     indicator_data_list = []
     for param in quandl_params:
@@ -65,9 +67,7 @@ def get_quandl_data(quandl_params):  #indicators are a list of the names of exte
     return concat_indicators_dd
 
 
-
-
 def write_data_to_s3(df, bucket_name, file_name):
     s3 = s3fs.S3FileSystem(anon=False, key=auth.aws_access_key_id, secret=auth.aws_secret_access_key)
-    with s3.open("{}/{}.csv",format(bucket_name, file_name), "w") as f:
+    with s3.open("{}/{}.csv", format(bucket_name, file_name), "w") as f:
         df.to_csv(f)
