@@ -2,12 +2,65 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="711fe033-b480-4472-b796-28c88b8bfe5c" name="Default Changelist" comment="adding if condition on the 'symbol' column">
-      <change afterPath="$PROJECT_DIR$/get_sp500_util.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data Extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data Extraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SP_500_companies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_data_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_AD.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_ADX.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_AROON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_BBANDS_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_BBANDS_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_BOP.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_CCI.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_DX.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_EMA_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_EMA_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_HT_TRENDLINE_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_HT_TRENDLINE_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_MACD_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_MACD_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_MFI.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_MOM_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_MOM_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_OBV.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_ROC_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_ROC_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_RSI_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_RSI_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_SAR.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_SMA_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_SMA_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_STOCH.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_TRANGE.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/DIA_index_fund.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_AD.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_ADX.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_AROON.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_BBANDS_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_BBANDS_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_BOP.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_CCI.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_DX.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_EMA_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_EMA_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_HT_TRENDLINE_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_HT_TRENDLINE_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_MACD_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_MACD_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_MFI.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_MOM_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_MOM_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_OBV.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_ROC_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_ROC_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_RSI_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_RSI_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_SAR.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_SMA_close.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_SMA_open.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_STOCH.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_TRANGE.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlphaVantage_data/VOO_index_fund.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_extraction_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_extraction_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_data_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_data_util.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +103,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Data Extraction">
+  <component name="RunManager" selected="Python.data_extraction_pipeline">
     <configuration name="Data Extraction" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Stock_Market_Trend_Prediction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -114,8 +167,30 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="data_extraction_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Stock_Market_Trend_Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_extraction_pipeline.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.data_extraction_pipeline" />
         <item itemvalue="Python.Data Extraction" />
         <item itemvalue="Python.SP_500_companies" />
         <item itemvalue="Python.Get_Stock_Market_Info" />

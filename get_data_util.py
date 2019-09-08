@@ -3,7 +3,6 @@
 import requests
 import pandas as pd
 import random
-import dask.dataframe as dd
 import io
 import s3fs
 import quandl
@@ -12,7 +11,7 @@ import time
 # from files:
 import auth
 import params
-import get_sp500_util
+
 
 # raw_data_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/AlphaVantage_data/"
 # initialization:
@@ -24,12 +23,14 @@ import get_sp500_util
 
 
 def get_alpha_vantage_data(symbols):
+    begin_time = time.perf_counter()
     stock_info_list = []
     alpha_vantage_base = "https://www.alphavantage.co"  # url base
     param_dict_names = [name for name in dir(params) if ('params' in name)]
     param_dict_list = [getattr(params, name) for name in param_dict_names]
     for stock_symbol in symbols:
-        stock_attribute_df_list = []
+        start = time.perf_counter()
+        stock_attribute_df = pd.DataFrame()
         print('Getting data for {}...'.format(stock_symbol))
         for i in range(len(param_dict_list)):
             print("Process Begin...")
@@ -40,31 +41,29 @@ def get_alpha_vantage_data(symbols):
             df.add_prefix(param_dict_names[i].replace("_params",""))
             if param_dict_list[i]["function"] == "TIME_SERIES_DAILY_ADJUSTED":
                 df["stock_symbol"] = stock_symbol
-            d_df = dd.from_pandas(df, npartitions=5)
-            stock_attribute_df_list.append(df)
+            stock_attribute_df.join(df, how="outer")
             print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
             print("Process halting...")
-            time.sleep(random.randint(1,2))
-        stock_attribute_d = dd.concat(stock_attribute_df_list, axis=1)
-        stock_info_list.append(stock_attribute_d)
-        print("Data extraction for {} complete!".format(stock_symbol))
-    concat_data = dd.concat(stock_info_list, axis=0)
+            time.sleep(random.randint(0,2))
+        stock_info_list.append(stock_attribute_df)
+        runtime = time.perf_counter() - start
+        print("Data extraction for {} complete! Runtime:{} seconds".format(stock_symbol, str(runtime)))
+    concat_data = pd.concat(stock_info_list, axis=0)
+    total_runtime = time.perf_counter() - begin_time
     return concat_data
 
-    print('Alpha Vantage Data Extraction Process Complete!!')
+    print('Alpha Vantage Data Extraction Process Complete!!  Total Runtime: {} seconds...'.format(str(total_runtime)))
 
 
 def get_quandl_data(quandl_params):  # indicators are a list of the names of external indicators
     quandl.ApiConfig.api_key = auth.apikey_quandl
-    indicator_data_list = []
+    indicator_data = pd.DataFrame()
     for param in quandl_params:
         dict_ = getattr(params, param)
         data = quandl.get("{}/{}".format(dict_["database_code"], dict_["dataset_code"]),
                           start_date=dict_["start_date"], end_date=dict_["end_date"])
-        dd_data = dd.from_pandas(data, npartitions=5)
-        indicator_data_list.append(dd_data)
-    concat_indicators_dd = dd.concat(indicator_data_list, axis=1)
-    return concat_indicators_dd
+        indicator_data.join(data, how="outer")
+    return indicator_data
 
 
 def write_data_to_s3(df, bucket_name, file_name):
