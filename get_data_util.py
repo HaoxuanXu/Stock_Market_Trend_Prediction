@@ -48,6 +48,7 @@ def get_alpha_vantage_data(symbols):
         stock_info_list.append(stock_attribute_df)
         runtime = time.perf_counter() - start
         print("Data extraction for {} complete! Runtime:{} seconds".format(stock_symbol, str(round(runtime, 2))))
+        print("Total Time Elapsed--{} seconds...".format(str(round(time.perf_counter()-begin_time, 2))))
     concat_data = pd.concat(stock_info_list, axis=0)
     total_runtime = time.perf_counter() - begin_time
     return concat_data
@@ -58,11 +59,15 @@ def get_alpha_vantage_data(symbols):
 def get_quandl_data(quandl_params):  # indicators are a list of the names of external indicators
     quandl.ApiConfig.api_key = auth.apikey_quandl
     indicator_data = pd.DataFrame()
+    begin_time = time.perf_counter()
+    print("Begin Retrieving Quandl Data...")
     for param in quandl_params:
         dict_ = getattr(params, param)
         data = quandl.get("{}/{}".format(dict_["database_code"], dict_["dataset_code"]),
                           start_date=dict_["start_date"], end_date=dict_["end_date"])
         indicator_data.join(data, how="outer")
+        print("Retrieved Data on {}! Time Elapsed: {} seconds".format(param.replace("_parameters",""),
+                                                                      str(round(time.perf_counter()-begin_time))))
     return indicator_data
 
 
