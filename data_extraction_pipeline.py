@@ -16,6 +16,6 @@ quandl_parameters = [a for a in dir(params) if ("_parameters" in a)]
 alpha_vantage_data = get_data_util.get_alpha_vantage_data(ticker_list)
 quandl_data = get_data_util.get_quandl_data(quandl_parameters)
 
-stock_market_data = dd.concat([alpha_vantage_data, quandl_data], axis=1)
+stock_market_data = alpha_vantage_data.join(quandl_data, how="outer")
 
 get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="stock_market_data")

@@ -43,11 +43,11 @@ def get_alpha_vantage_data(symbols):
                 df["stock_symbol"] = stock_symbol
             stock_attribute_df.join(df, how="outer")
             print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
-            print("Process halting...")
-            time.sleep(random.randint(0,2))
+            # print("Process halting...")
+            # time.sleep(0.5)
         stock_info_list.append(stock_attribute_df)
         runtime = time.perf_counter() - start
-        print("Data extraction for {} complete! Runtime:{} seconds".format(stock_symbol, str(runtime)))
+        print("Data extraction for {} complete! Runtime:{} seconds".format(stock_symbol, str(round(runtime, 2))))
     concat_data = pd.concat(stock_info_list, axis=0)
     total_runtime = time.perf_counter() - begin_time
     return concat_data
