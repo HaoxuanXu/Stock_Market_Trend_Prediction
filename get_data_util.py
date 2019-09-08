@@ -1,6 +1,8 @@
 # The APIs used to collect data are "alphavantage" and "quandl"
 # from libraries
 import requests
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 import pandas as pd
 import random
 import io
@@ -35,14 +37,20 @@ def get_alpha_vantage_data(symbols):
         for i in range(len(param_dict_list)):
             print("Process Begin...")
             param_dict_list[i]["symbol"] = stock_symbol
-            r = requests.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
+            session = requests.Session()
+            retry = Retry(connect=3, backoff_factor=0.5)
+            adapter = HTTPAdapter(max_retries=retry)
+            session.mount("http://", adapter)
+            session.mount("https://", adapter)
+            r = session.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
             df = pd.read_csv(io.StringIO(r.content.decode('utf-8')))
             df.set_index(df.columns[0], inplace=True)
             df.add_prefix(param_dict_names[i].replace("_params",""))
             if param_dict_list[i]["function"] == "TIME_SERIES_DAILY_ADJUSTED":
                 df["stock_symbol"] = stock_symbol
-            stock_attribute_df.join(df, how="outer")
-            print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
+                stock_attribute_df.join(df, how="outer")
+                print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
+
             # print("Process halting...")
             # time.sleep(0.5)
         stock_info_list.append(stock_attribute_df)
