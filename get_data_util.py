@@ -2,11 +2,10 @@
 # from libraries
 import requests
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+from urllib3.util import Retry
 import pandas as pd
-import random
-import io
-import s3fs
+from io import StringIO
+import boto3
 import quandl
 import time
 
@@ -32,54 +31,60 @@ def get_alpha_vantage_data(symbols):
     param_dict_list = [getattr(params, name) for name in param_dict_names]
     for stock_symbol in symbols:
         start = time.perf_counter()
-        stock_attribute_df = pd.DataFrame()
+        stock_indicators = []
         print('Getting data for {}...'.format(stock_symbol))
         for i in range(len(param_dict_list)):
             print("Process Begin...")
             param_dict_list[i]["symbol"] = stock_symbol
             session = requests.Session()
-            retry = Retry(connect=3, backoff_factor=0.5)
+            retry = Retry(connect=5, backoff_factor=0.5)
             adapter = HTTPAdapter(max_retries=retry)
             session.mount("http://", adapter)
             session.mount("https://", adapter)
             r = session.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
-            df = pd.read_csv(io.StringIO(r.content.decode('utf-8')))
+            df = pd.read_csv(StringIO(r.content.decode('utf-8')))
             df.set_index(df.columns[0], inplace=True)
-            df.add_prefix(param_dict_names[i].replace("_params",""))
+            df = df.add_prefix(param_dict_list[i]["function"]+"_")
+            #df.add_prefix(param_dict_names[i].replace("_params",""))
             if param_dict_list[i]["function"] == "TIME_SERIES_DAILY_ADJUSTED":
                 df["stock_symbol"] = stock_symbol
-                stock_attribute_df.join(df, how="outer")
-                print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
-
-            # print("Process halting...")
-            # time.sleep(0.5)
-        stock_info_list.append(stock_attribute_df)
+            stock_indicators.append(df)
+            print("Successfully extracted {}!".format(stock_symbol+"_"+param_dict_names[i].replace("_params","")))
+        stock_info = pd.concat(stock_indicators, axis=1, sort=False)
+        stock_info_list.append(stock_info)
         runtime = time.perf_counter() - start
         print("Data extraction for {} complete! Runtime:{} seconds".format(stock_symbol, str(round(runtime, 2))))
         print("Total Time Elapsed--{} seconds...".format(str(round(time.perf_counter()-begin_time, 2))))
-    concat_data = pd.concat(stock_info_list, axis=0)
+    concat_data = pd.concat(stock_info_list, axis=0, sort=False)
     total_runtime = time.perf_counter() - begin_time
-    return concat_data
-
     print('Alpha Vantage Data Extraction Process Complete!!  Total Runtime: {} seconds...'.format(str(total_runtime)))
+    return concat_data
 
 
 def get_quandl_data(quandl_params):  # indicators are a list of the names of external indicators
     quandl.ApiConfig.api_key = auth.apikey_quandl
-    indicator_data = pd.DataFrame()
+    indicator_data_list = []
     begin_time = time.perf_counter()
     print("Begin Retrieving Quandl Data...")
     for param in quandl_params:
         dict_ = getattr(params, param)
         data = quandl.get("{}/{}".format(dict_["database_code"], dict_["dataset_code"]),
                           start_date=dict_["start_date"], end_date=dict_["end_date"])
-        indicator_data.join(data, how="outer")
+        data = data.add_prefix(param.split("_")[0]+"_")
+        indicator_data_list.append(data)
         print("Retrieved Data on {}! Time Elapsed: {} seconds".format(param.replace("_parameters",""),
                                                                       str(round(time.perf_counter()-begin_time))))
+    indicator_data = pd.concat(indicator_data_list, axis=1)
     return indicator_data
 
 
 def write_data_to_s3(df, bucket_name, file_name):
-    s3 = s3fs.S3FileSystem(anon=False, key=auth.aws_access_key_id, secret=auth.aws_secret_access_key)
-    with s3.open("{}/{}.csv", format(bucket_name, file_name), "w") as f:
-        df.to_csv(f)
+    print("Writing the dataframe to s3...")
+    begin_time = time.perf_counter()
+    csv_buffer = StringIO()
+    df.to_csv(csv_buffer, sep="|", index=False)
+    s3 = boto3.resource("s3")
+    s3.Object(bucket_name, file_name).put(Body=csv_buffer.getvalue())
+    runtime = time.perf_counter() - begin_time
+    print("DataFrame writing complete!!  Total Runtime: {} seconds!".format(str(round(runtime, 2))))
+

@@ -35,7 +35,7 @@ For External Factors (Commodity Price, Exchange Rate) --using Quandl:
     Wiki Continuous Futures (Coffee C Futures, Continuous Contract)--"coffee_futures_parameters"
 '''
 
-us_soybean_futures_parameters = {
+soybean_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "CME_S2",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -43,7 +43,7 @@ us_soybean_futures_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-us_corn_futures_parameters = {
+corn_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "LIFFE_EMA2",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -51,7 +51,7 @@ us_corn_futures_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-us_treasury_yield_parameters = {
+treasury_yield_parameters = {
     "database_code": "USTREASURY",
     "dataset_code": "REALYIELD",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -59,7 +59,7 @@ us_treasury_yield_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-us_dollar_index_futures_parameters = {
+dollar_index_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "ICE_DX2",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -67,7 +67,7 @@ us_dollar_index_futures_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-thirty_day_fed_fund_futures_parameters = {
+fedfund_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "CME_FF16",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -91,7 +91,7 @@ gold_futures_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-crude_oil_futures_parameters = {
+crudeoil_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "CME_QM1",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
@@ -99,7 +99,7 @@ crude_oil_futures_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-us_corporate_bond_index_yield_parameters = {
+corporatebond_index_yield_parameters = {
     "database_code": "ML",
     "dataset_code": "USEY",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
