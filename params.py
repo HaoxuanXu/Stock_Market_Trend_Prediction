@@ -35,21 +35,7 @@ For External Factors (Commodity Price, Exchange Rate) --using Quandl:
     Wiki Continuous Futures (Coffee C Futures, Continuous Contract)--"coffee_futures_parameters"
 '''
 
-soybean_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "CME_S2",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
 
-corn_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "LIFFE_EMA2",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
 
 treasury_yield_parameters = {
     "database_code": "USTREASURY",

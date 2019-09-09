@@ -42,7 +42,7 @@ def get_alpha_vantage_data(symbols):
             session.mount("http://", adapter)
             session.mount("https://", adapter)
             r = session.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
-            df = pd.read_csv(StringIO(r.content.decode('utf-8')))
+            df = pd.read_csv(StringIO(r.content.decode('utf-8')), sep="delimiter", engine="python")
             df.set_index(df.columns[0], inplace=True)
             df = df.add_prefix(param_dict_list[i]["function"]+"_")
             #df.add_prefix(param_dict_names[i].replace("_params",""))
@@ -74,8 +74,12 @@ def get_quandl_data(quandl_params):  # indicators are a list of the names of ext
         indicator_data_list.append(data)
         print("Retrieved Data on {}! Time Elapsed: {} seconds".format(param.replace("_parameters",""),
                                                                       str(round(time.perf_counter()-begin_time))))
-    indicator_data = pd.concat(indicator_data_list, axis=1)
+    indicator_data = indicator_data_list[0]
+    for i in range(1, len(indicator_data_list)):
+        indicator_data = indicator_data.join(indicator_data_list[i], how="outer")
+
     return indicator_data
+    print("Process Complete!!!")
 
 
 def write_data_to_s3(df, bucket_name, file_name):
