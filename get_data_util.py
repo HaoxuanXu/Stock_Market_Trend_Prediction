@@ -6,9 +6,9 @@ from urllib3.util import Retry
 import pandas as pd
 import dask.dataframe as dd
 from io import StringIO
-import boto3
 import quandl
 import time
+import boto3
 
 # from files:
 import auth
@@ -76,18 +76,14 @@ def get_quandl_data(quandl_params):  # indicators are a list of the names of ext
         print("Retrieved Data on {}! Time Elapsed: {} seconds".format(param.replace("_parameters",""),
                                                                       str(round(time.perf_counter()-begin_time))))
     indicator_data = dd.concat(indicator_data_list, axis=1)
-
-    return indicator_data
     print("Process Complete!!!")
+    return indicator_data
 
 
 def write_data_to_s3(df, bucket_name, file_name):
-    print("Writing the dataframe to s3...")
-    begin_time = time.perf_counter()
     csv_buffer = StringIO()
-    df.to_csv(csv_buffer, sep="|", index=False)
-    s3 = boto3.resource("s3")
-    s3.Object(bucket_name, file_name).put(Body=csv_buffer.getvalue())
-    runtime = time.perf_counter() - begin_time
-    print("DataFrame writing complete!!  Total Runtime: {} seconds!".format(str(round(runtime, 2))))
+    df.compute().to_csv(csv_buffer)
+    s3_resource = boto3.resource('s3')
+    s3_resource.Object(bucket_name, '{}.csv'.format(file_name)).put(Body=csv_buffer.getvalue())
+
 

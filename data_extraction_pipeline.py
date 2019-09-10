@@ -20,11 +20,13 @@ quandl_data = get_data_util.get_quandl_data(quandl_parameters)
 #alpha_vantage_data.to_csv(temp_file_folder+"temp_alpha.csv")
 #quandl_data.to_csv(temp_file_folder+"temp_quandl.csv")
 
+print("Begin merging Alpha Vantage and Quandl Data...")
 stock_market_data = dd.merge(alpha_vantage_data, quandl_data)
+print("Merge Complete!!!")
 #stock_market_data = alpha_vantage_data.join(quandl_data, how="outer")
 #stock_market_data_pickle = stock_market_data.copy()
 #stock_market_data_pickle.to_pickle(temp_file_folder+"temp_data_file.pkl")
 #stock_market_data.to_csv(temp_file_folder+"temp_data_file.csv")
-print(stock_market_data)
 
-#get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="stock_market_data")
+
+get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="stock_market_data")
