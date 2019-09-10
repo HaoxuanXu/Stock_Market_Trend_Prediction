@@ -5,8 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Testing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Testing.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_extraction_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_extraction_pipeline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_data_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_data_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
