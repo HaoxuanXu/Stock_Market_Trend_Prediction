@@ -93,37 +93,6 @@ corporatebond_index_yield_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-lumber_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "CME_LB1",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
-
-cotton_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "ICE_CT3",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
-
-wheat_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "CME_W6",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
-
-coffee_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "ICE_KC5",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
 '''
 For Technical Indicators:
     200 Day Exponential Moving Average (EMA) --open & close & high & low,
