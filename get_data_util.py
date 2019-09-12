@@ -42,7 +42,7 @@ def get_alpha_vantage_data(symbols):
             session.mount("https://", adapter)
             param_dict_list[i]["symbol"] = stock_symbol
             r = session.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
-            df = pd.read_csv(StringIO(r.content.decode('utf-8')), engine="python").loc[1:,:]
+            df = pd.read_csv(StringIO(r.content.decode('utf-8')), engine="python").iloc[1:,:]
             df.columns = [param_dict_list[i]["function"] + "_" + str(column) for column in df.columns]
             df.set_index(df.columns[0], inplace=True)
             if param_dict_list[i]["function"] == "TIME_SERIES_DAILY_ADJUSTED":
