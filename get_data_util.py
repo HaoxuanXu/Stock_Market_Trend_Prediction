@@ -43,7 +43,7 @@ def get_alpha_vantage_data(symbols):
             param_dict_list[i]["symbol"] = stock_symbol
             r = session.get(alpha_vantage_base + '/query', params=param_dict_list[i], headers=auth.user_agent)
             df = pd.read_csv(StringIO(r.content.decode('utf-8')), engine="python").iloc[1:,:]
-            df.columns = [param_dict_list[i]["function"] + "_" + str(column) for column in df.columns]
+            df.columns = [param_dict_names[i].split("params")[0] + str(column) for column in df.columns]
             df.set_index(df.columns[0], inplace=True)
             if param_dict_list[i]["function"] == "TIME_SERIES_DAILY_ADJUSTED":
                 df["stock_symbol"] = stock_symbol
@@ -82,7 +82,20 @@ def get_quandl_data(quandl_params):  # indicators are a list of the names of ext
 
 
 def write_data_to_s3(df, bucket_name, file_name):
+    start = time.perf_counter()
+    print("Start writing...")
     csv_buffer = StringIO()
     df.to_csv(csv_buffer)
     s3_resource = boto3.resource('s3')
     s3_resource.Object(bucket_name, '{}.csv'.format(file_name)).put(Body=csv_buffer.getvalue())
+    runtime = time.perf_counter() - start
+    print("Data writing complete!!    Runtime: {} seconds!!".format(str(round(runtime, 2))))
+
+
+def get_data_from_s3(bucket_name, file_name, aws_key, aws_secret):
+    client = boto3.client('s3', aws_access_key_id=aws_key, aws_secret_access_key=aws_secret)
+    csv_obj = client.get_object(Bucket=bucket_name, Key=file_name+".csv")
+    body = csv_obj["Body"]
+    csv_string = body.read().decode('utf-8')
+    df = pd.read_csv(StringIO(csv_string), index_col=0)
+    return df

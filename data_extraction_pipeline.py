@@ -5,12 +5,10 @@ import dask.dataframe as dd
 import params
 import auth
 import get_data_util
-import get_sp500_util as sp500
 import get_dow_jones_util as dj
 
-temp_file_folder = "C:/Users/John Xu/Desktop/Stock_Market_Trend_Prediction/temp_file/"
 
-# list of S&P 500 companies tickers
+# list of Dow Jones companies tickers
 ticker_list = dj.get_dow_jones(url=dj.url, headers=auth.user_agent)
 
 # Names of parameters to be extracted from Quandl
@@ -27,5 +25,6 @@ stock_market_data = alpha_vantage_data.join(quandl_data)
 print("Merge Complete!!!")
 
 
-
+print("Begin writing data to AWS s3!!")
 get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="dow_jones_stock_market_data")
+print("Data writing complete!!")

@@ -37,13 +37,6 @@ For External Factors (Commodity Price, Exchange Rate) --using Quandl:
 
 
 
-treasury_yield_parameters = {
-    "database_code": "USTREASURY",
-    "dataset_code": "REALYIELD",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
 
 dollar_index_futures_parameters = {
     "database_code": "CHRIS",
@@ -79,7 +72,7 @@ gold_futures_parameters = {
 
 crudeoil_futures_parameters = {
     "database_code": "CHRIS",
-    "dataset_code": "CME_QM1",
+    "dataset_code": "CME_CL11",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
                                   day=dt.datetime.now().day)),
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
@@ -93,6 +86,13 @@ corporatebond_index_yield_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
+tenyrnote_futures_parameters = {
+    "database_code": "CHRIS",
+    "dataset_code": "CME_TY2",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
 '''
 For Technical Indicators:
     200 Day Exponential Moving Average (EMA) --open & close & high & low,
@@ -105,6 +105,41 @@ For Technical Indicators:
     Chaikin A/D Line Values (AD),
     On Balance Volume (OBV),
 '''
+sma_open_params_200 = {
+    "function": "SMA",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "open",
+    "datatype":"csv",
+    "apikey": auth.apikey_av_premium
+}
+
+sma_close_params_200 = {
+    "function": "SMA",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "close",
+    "datatype":"csv",
+    "apikey": auth.apikey_av_premium
+}
+
+sma_high_params_200 = {
+    "function": "SMA",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "high",
+    "datatype":"csv",
+    "apikey": auth.apikey_av_premium
+}
+
+sma_low_params_200 = {
+    "function": "SMA",
+    "interval": "daily",
+    "time_period": 200,
+    "series_type": "low",
+    "datatype":"csv",
+    "apikey": auth.apikey_av_premium
+}
 
 ema_open_params_200 = {
     "function": "EMA",
@@ -128,7 +163,7 @@ ema_high_params = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 200,
-    "series_type": "close",
+    "series_type": "high",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
