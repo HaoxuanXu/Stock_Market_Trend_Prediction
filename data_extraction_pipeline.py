@@ -18,19 +18,22 @@ print("Extracting Alpha Vantage Data...")
 alpha_start_ = time.perf_counter()
 alpha_vantage_data = get_data_util.get_alpha_vantage_data(ticker_list)
 alpha_end_ = time.perf_counter() - alpha_start_
-print("Extraction Complete!!! Runtime: {} seconds!".format(str(alpha_end_)))
+print("Extraction Complete!!! Runtime: {} seconds!".format(str(round(alpha_end_, 2))))
 
 # Begin extracting external indicator data from Quandl API
 print("Extracting Quandl data...")
+quandl_start_ = time.perf_counter()
 quandl_data = get_data_util.get_quandl_data(quandl_parameters)
+quandl_end_ = time.perf_counter() - quandl_start_
+print("Extraction Complete!!! Runtime: {} seconds!".format(str(round(quandl_end_, 2))))
 
 
-
+# Begin merging the Alpha Vantage data and the Quandl data
 print("Begin merging Alpha Vantage and Quandl Data...")
 stock_market_data = alpha_vantage_data.join(quandl_data)
 print("Merge Complete!!!")
 
-
+# Begin writing the joined data to AWS s3
 print("Begin writing data to AWS s3!!")
 get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="dow_jones_stock_market_data")
 print("Data writing complete!!")
