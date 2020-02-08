@@ -20,7 +20,6 @@ stock_time_series_adjusted_params = {
 }
 '''
 For External Factors (Commodity Price, Exchange Rate) --using Quandl:
-    Wiki Continuous Futures (Soybean Futures, Continuous Contract #2 (S2))--"us_soybean_futures_parameters",
     Wiki Continuous Futures (Corn Futures, Continuous Contract #2 (EMA2))--"us_corn_futures_parameters",
     US Treasury (Treasury Yield Curve Rates)--"us_treasury_yield_parameters",
     Wiki Continuous Futures (US Dollar Index Futures, Continuous Contract)--"us_dollar_index_futures_parameters",
