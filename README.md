@@ -10,7 +10,7 @@ Using API from Alpha Vantage and Quandl to train and test multiple machine learn
 #### This project extracts daily open, close, high, low, and adjusted values from Vanguard S&P 500 ETF history
 
 It includes multiple technical indicators and external pricing information as features
-* #####Technical Indicators
+* ##### Technical Indicators
     
     * 200 Day Exponential Moving Average (EMA) --open & close & high & low
     * Moving Average Convergence / Divergence (MACD) --open & close & high & low
