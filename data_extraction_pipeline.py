@@ -4,11 +4,11 @@ import time
 import params
 import auth
 import get_data_util
-import get_dow_jones_util as dj
 
 
-# list of Dow Jones companies tickers
-ticker_list = dj.get_dow_jones(url=dj.url, headers=auth.user_agent)
+
+# I will only look at the Vanguard S&P 500 ETF
+ticker_symbol = ["VOO"]
 
 # Names of parameters to be extracted from Quandl
 quandl_parameters = [a for a in dir(params) if ("_parameters" in a)]
@@ -16,7 +16,7 @@ quandl_parameters = [a for a in dir(params) if ("_parameters" in a)]
 # Begin extracting stock market data from Alpha Vantage API
 print("Extracting Alpha Vantage Data...")
 alpha_start_ = time.perf_counter()
-alpha_vantage_data = get_data_util.get_alpha_vantage_data(ticker_list)
+alpha_vantage_data = get_data_util.get_alpha_vantage_data(ticker_symbol)
 alpha_end_ = time.perf_counter() - alpha_start_
 print("Extraction Complete!!! Runtime: {} seconds!".format(str(round(alpha_end_, 2))))
 
@@ -35,5 +35,5 @@ print("Merge Complete!!!")
 
 # Begin writing the joined data to AWS s3
 print("Begin writing data to AWS s3!!")
-get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="dow_jones_stock_market_data")
+get_data_util.write_data_to_s3(df=stock_market_data, bucket_name=auth.bucket_name, file_name="Vanguard_S&P500_ETF_data")
 print("Data writing complete!!")

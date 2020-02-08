@@ -4,12 +4,11 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util import Retry
 import pandas as pd
-import dask.dataframe as dd
 from io import StringIO
 import quandl
 import time
 import boto3
-import datetime
+
 
 # from files:
 import auth
@@ -49,6 +48,7 @@ def get_alpha_vantage_data(symbols):
                 df["stock_symbol"] = stock_symbol
             stock_indicators.append(df)
             print("Successfully extracted {}!".format(stock_symbol + "_" + param_dict_names[i].replace("_params", "")))
+
         stock_info = pd.concat(stock_indicators, axis=1, sort=False)
         #stock_info = stock_info.loc[:, ~stock_info.columns.duplicated()]
         stock_info_list.append(stock_info)

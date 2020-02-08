@@ -25,7 +25,6 @@ For External Factors (Commodity Price, Exchange Rate) --using Quandl:
     US Treasury (Treasury Yield Curve Rates)--"us_treasury_yield_parameters",
     Wiki Continuous Futures (US Dollar Index Futures, Continuous Contract)--"us_dollar_index_futures_parameters",
     Wiki Continuous Futures (30 Day Federal Funds Futures, Continuous Contract #16 (FF16))--"thirty_day_fed_fund_futures_parameters",
-    Wiki Continuous Futures (S&P 500 Futures, Continuous Contract #1 (SP1) (Front Month))--"sp500_futures_parameters",
     Wiki Continuous Futures (Gold Futures, Continuous Contract #2 (GC2))--"gold_futures_parameters",
     Wiki Continuous Futures (E-mini Crude Oil Futures, Continuous Contract #1 (QM1) (Front Month))--"crude_oil_futures_parameters",
     Corporate Bond Yield Rates (US Corporate Bond Index Yield)--"us_corporate_bond_index_yield_parameters",
@@ -49,14 +48,6 @@ dollar_index_futures_parameters = {
 fedfund_futures_parameters = {
     "database_code": "CHRIS",
     "dataset_code": "CME_FF16",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
-
-sp500_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "CME_SP1",
     "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
                                   day=dt.datetime.now().day)),
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))

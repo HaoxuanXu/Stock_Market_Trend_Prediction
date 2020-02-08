@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="711fe033-b480-4472-b796-28c88b8bfe5c" name="Default Changelist" comment="adding if condition on the 'symbol' column">
+      <change afterPath="$PROJECT_DIR$/data_reading.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data Preprocessing.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Data Preprocessing.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_extraction_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_extraction_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_data_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/get_data_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_dow_jones_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/get_sp500_util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/params.py" beforeDir="false" afterPath="$PROJECT_DIR$/params.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +32,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NYC_Green_Taxi_Trips_2019/Get_links.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -46,7 +52,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.data_extraction_pipeline">
+  <component name="RunManager" selected="Python.data_reading">
     <configuration name="Data Extraction" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Stock_Market_Trend_Prediction" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -110,7 +116,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="data_extraction_pipeline" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="data_extraction_pipeline" type="PythonConfigurationType" factoryName="Python">
       <module name="Stock_Market_Trend_Prediction" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -123,6 +129,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_extraction_pipeline.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_reading" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Stock_Market_Trend_Prediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_reading.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,7 +181,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.data_extraction_pipeline" />
+        <item itemvalue="Python.data_reading" />
         <item itemvalue="Python.get_data_util" />
         <item itemvalue="Python.Data Extraction" />
         <item itemvalue="Python.SP_500_companies" />
