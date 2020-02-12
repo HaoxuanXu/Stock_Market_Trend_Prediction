@@ -20,7 +20,6 @@ stock_time_series_adjusted_params = {
 }
 '''
 For External Factors (Commodity Price, Exchange Rate) --using Quandl:
-    Wiki Continuous Futures (Corn Futures, Continuous Contract #2 (EMA2))--"us_corn_futures_parameters",
     US Treasury (Treasury Yield Curve Rates)--"us_treasury_yield_parameters",
     Wiki Continuous Futures (US Dollar Index Futures, Continuous Contract)--"us_dollar_index_futures_parameters",
     Wiki Continuous Futures (30 Day Federal Funds Futures, Continuous Contract #16 (FF16))--"thirty_day_fed_fund_futures_parameters",
@@ -33,7 +32,13 @@ For External Factors (Commodity Price, Exchange Rate) --using Quandl:
     Wiki Continuous Futures (Coffee C Futures, Continuous Contract)--"coffee_futures_parameters"
 '''
 
-
+treasury_yield_curve_parameters = {
+    "database_code": "USTREASURY",
+    "dataset_code": "YIELD",
+    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
+                                  day=dt.datetime.now().day)),
+    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
+}
 
 
 dollar_index_futures_parameters = {

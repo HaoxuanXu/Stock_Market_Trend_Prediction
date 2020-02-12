@@ -25,6 +25,7 @@ It includes multiple technical indicators and external pricing information as fe
     
 
 * ##### External Factors (from Wiki Continuous Futures)
+    * US Treasury (Treasury Yield Curve Rates) --"us_treasury_yield_parameters"
     * US Dollar Index Futures, Continuous Contract 
     * 30 Day Federal Funds Futures, Continuous Contract #16 (FF16) 
     * Gold Futures, Continuous Contract #2 (GC2)
