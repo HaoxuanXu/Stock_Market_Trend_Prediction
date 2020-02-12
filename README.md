@@ -13,6 +13,7 @@ It includes multiple technical indicators and external pricing information as fe
 * ##### Technical Indicators
     
     * 200 Day Exponential Moving Average (EMA) --open & close & high & low
+    * 200 Day Simple Moving Average (SMA) --open & close & high & low
     * Moving Average Convergence / Divergence (MACD) --open & close & high & low
     * Stochastic Oscillator (STOCH)
     * Relative Strength Index (RSI) --open & close & high & low
