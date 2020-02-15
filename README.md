@@ -14,7 +14,7 @@ It includes multiple technical indicators and external pricing information as fe
     
     * 200 Day Exponential Moving Average (EMA-200) 
     * 20 Day Exponential Moving Average (EMA-20) 
-    * 9 Day Exponential Moving Average (EMA-9) -- **used as signal for MACD**
+    * 9 Day Exponential Moving Average (EMA-9) -- ***used as signal for MACD***
     * Moving Average Convergence / Divergence (MACD) 
     * Stochastic Oscillator (STOCH)
     * Relative Strength Index (RSI) 
@@ -89,7 +89,9 @@ It includes multiple technical indicators and external pricing information as fe
     or under.
  
 * ##### Commodity Channel Index (CCI)
-    *    
+    * Like most oscillators, the CCI was developed to determine overbought and oversold levels. 
+    The CCI does this by measuring the relationship between price and a moving average, or
+    more specifically, normal deviations from that average   
   
 
 ***
