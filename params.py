@@ -97,11 +97,10 @@ For Technical Indicators:
     Commodity Channel Index (CCI),
     Aroon Indicator (AROON),
     Bollinger Bands Values (BBANDS) --open & close & high & low,
-    Chaikin A/D Line Values (AD),
     On Balance Volume (OBV),
 '''
 
-ema_close_params_20 = {
+ema_close_20_params = {
     "function": "SMA",
     "interval": "daily",
     "time_period": 20,
@@ -110,7 +109,7 @@ ema_close_params_20 = {
     "apikey": auth.apikey_av_premium
 }
 
-ema_close_params_200 = {
+ema_close_200_params = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 200,
@@ -119,7 +118,7 @@ ema_close_params_200 = {
     "apikey": auth.apikey_av_premium
 }
 
-ema_close_params_9 = {
+ema_close_9_params = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 9,
@@ -178,14 +177,6 @@ bbands_close_params = {
     "interval": "daily",
     "time_period": 20,
     "series_type": "close",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-
-ad_params = {
-    "function": "AD",
-    "interval": "daily",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
