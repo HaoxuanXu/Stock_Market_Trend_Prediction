@@ -152,6 +152,22 @@ It includes multiple technical indicators and external pricing information as fe
         * TBP: Top Bollinger Band (the top 20 periods)
         * BBP: Bottom Bollinger Band (the bottom 20 periods)
         * SMAC: Simple moving average close (the middle 20 periods)
+    * A squeeze is triggered when volatility reaches a six-month low and is identified 
+    when Bollinger Bands reach a six-month minimum distance apart.
+    
+* ##### On-Balance Volume (OBV)
+    * On-Balance Volume is a volume based momentum indicator that measures positive and
+    negative volume flow. The idea was that volume was the driving force behind the markets, 
+    and OBV was designed to project when major moves in the market would occur
+    * **Formula for OBV:**
+        * If today's close is greater than yesterday's close, then today's volume is added
+        to yesterday's OBV, and is considered Up volume.
+        * If today's close is less than yesterday's close, then today's volume is subtracted 
+        from yesterday's volume and is considered Down volume.
+        * If today's close is equal to yesterday's close, then today's OBV is equal to 
+        yesterday's OBV.
+    * OBV gives the most reliable feedback around tests of major highs and lows, making it a
+    perfect tool to measure the potential for breakouts and breakdowns
 
   
   
