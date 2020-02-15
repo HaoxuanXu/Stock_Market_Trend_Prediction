@@ -119,6 +119,24 @@ It includes multiple technical indicators and external pricing information as fe
         how many periods it has been since a 25-period high or low.***
     * When the Aroon Up is above the Aroon Down, it indicates bullish price behavior.
     * When the Aroon Down is above the Aroon Up, it indicates bearish price behavior.
+    * **Formula for the Aroon Indicator**
+        * Aroon Up = (25 - Periods Since 25 period High)*100 / 25
+        * Aroon Down = (25 - Periods Since 25 period Low)*100 / 25
+    * The Aroon Up and the Aroon Down lines fluctuate between zero and 100, with values close
+    to 100 indicating a strong trend and values near zero indicating a weak trend. The lower the
+    Aroon Up, the weaker the Up trend and stronger the down trend, and vice versa.
+    * **The main assumption underlying this indicator is that a stock's price will close 
+    regularly at new highs during an up trend, and regularly make lows in a down trend.**
+    * Crossover can signal entry or exit points. Up crossing above Down can be a signal to buy.
+        * Down crossing above Up may be a signal to sell
+        
+    * Limitations of the indicator:
+        * The buy and sell signals may occur too late, after a substantial price movement 
+        has already occurred. This happens because the indicator is looking backwards, 
+        and isn't predictive in nature
+        * A crossover may look good on the indicator, but it doesn't mean that the price will
+        make a big move.
+  
   
 
 ***
