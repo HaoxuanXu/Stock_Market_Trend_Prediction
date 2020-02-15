@@ -136,6 +136,23 @@ It includes multiple technical indicators and external pricing information as fe
         and isn't predictive in nature
         * A crossover may look good on the indicator, but it doesn't mean that the price will
         make a big move.
+    
+* ##### Bollinger Bands Values (BBANDS)
+    * Bollinger Band is a tool used in the technical analysis. It is defined by a series of
+    lines that are plotted two standard deviations--both positively and negatively--away 
+    from the simple moving average (SMA) of the price of a security, but can be adjusted
+    to user preferences.
+    * Bollinger Bands identify a stock's high and low volatility points. While it can be
+    a real challenge to forecast future prices and price cycles, volatility changes and
+    cycles are relatively easy to identify.
+    
+    * **Formula:**\
+    BBW = (TBP - BBP) / SMAC
+        * BBW: Bollinger Band Width
+        * TBP: Top Bollinger Band (the top 20 periods)
+        * BBP: Bottom Bollinger Band (the bottom 20 periods)
+        * SMAC: Simple moving average close (the middle 20 periods)
+
   
   
 
