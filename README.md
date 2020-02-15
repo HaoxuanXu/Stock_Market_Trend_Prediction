@@ -91,7 +91,22 @@ It includes multiple technical indicators and external pricing information as fe
 * ##### Commodity Channel Index (CCI)
     * Like most oscillators, the CCI was developed to determine overbought and oversold levels. 
     The CCI does this by measuring the relationship between price and a moving average, or
-    more specifically, normal deviations from that average   
+    more specifically, normal deviations from that average
+    
+        CCI = (Typical Price - Simple Moving Average) / 0.015 * Mean Deviation   
+        * Typical Price = asset's price on a particular day in the time period
+        * Simple Moving Average = arithmetic mean of asset's price over a time period
+        * Mean Deviation = mean of the absolute deviations of the asset's price over a 
+        time period
+        
+    * The one prerequisite to calculating the CCI is determining a time interval, which 
+    plays a key role in enhancing the accuracy of the CCI 
+    * Traders must also adjust their CCI entry and exit thresholds based on the volatility 
+    of the underlying security; for example, a ETF is traditionally less volatile than 
+    an individual stock issue.
+    
+* ##### Aroon Indicator
+    * 
   
 
 ***
