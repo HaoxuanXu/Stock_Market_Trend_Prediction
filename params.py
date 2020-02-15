@@ -100,14 +100,6 @@ For Technical Indicators:
     Chaikin A/D Line Values (AD),
     On Balance Volume (OBV),
 '''
-ema_open_params_20 = {
-    "function": "SMA",
-    "interval": "daily",
-    "time_period": 20,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 ema_close_params_20 = {
     "function": "SMA",
@@ -118,34 +110,7 @@ ema_close_params_20 = {
     "apikey": auth.apikey_av_premium
 }
 
-ema_high_params_20 = {
-    "function": "SMA",
-    "interval": "daily",
-    "time_period": 20,
-    "series_type": "high",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-ema_low_params_20 = {
-    "function": "SMA",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "low",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-ema_open_params_200 = {
-    "function": "EMA",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-ema_close_params = {
+ema_close_params_200 = {
     "function": "EMA",
     "interval": "daily",
     "time_period": 200,
@@ -154,31 +119,15 @@ ema_close_params = {
     "apikey": auth.apikey_av_premium
 }
 
-ema_high_params = {
+ema_close_params_9 = {
     "function": "EMA",
     "interval": "daily",
-    "time_period": 200,
-    "series_type": "high",
+    "time_period": 9,
+    "series_type": "close",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
 
-ema_low_params = {
-    "function": "EMA",
-    "interval": "daily",
-    "time_period": 200,
-    "series_type": "low",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-macd_open_params = {
-    "function": "MACD",
-    "interval": "daily",
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 macd_close_params = {
     "function": "MACD",
@@ -188,21 +137,6 @@ macd_close_params = {
     "apikey": auth.apikey_av_premium
 }
 
-macd_high_params = {
-    "function": "MACD",
-    "interval": "daily",
-    "series_type": "high",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-macd_low_params = {
-    "function": "MACD",
-    "interval": "daily",
-    "series_type": "low",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 stoch_params = {
     "function": "STOCH",
@@ -211,14 +145,6 @@ stoch_params = {
     "apikey": auth.apikey_av_premium
 }
 
-rsi_open_params = {
-    "function": "RSI",
-    "interval": "daily",
-    "time_period": 14,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 rsi_close_params = {
     "function": "RSI",
@@ -229,23 +155,6 @@ rsi_close_params = {
     "apikey": auth.apikey_av_premium
 }
 
-rsi_high_params = {
-    "function": "RSI",
-    "interval": "daily",
-    "time_period": 14,
-    "series_type": "high",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-rsi_low_params = {
-    "function": "RSI",
-    "interval": "daily",
-    "time_period": 14,
-    "series_type": "low",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 cci_params = {
     "function": "CCI",
@@ -263,14 +172,6 @@ aroon_params = {
     "apikey": auth.apikey_av_premium
 }
 
-bbands_open_params = {
-    "function": "BBANDS",
-    "interval": "daily",
-    "time_period": 20,
-    "series_type": "open",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 bbands_close_params = {
     "function": "BBANDS",
@@ -281,23 +182,6 @@ bbands_close_params = {
     "apikey": auth.apikey_av_premium
 }
 
-bbands_high_params = {
-    "function": "BBANDS",
-    "interval": "daily",
-    "time_period": 20,
-    "series_type": "high",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-bbands_low_params = {
-    "function": "BBANDS",
-    "interval": "daily",
-    "time_period": 20,
-    "series_type": "low",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
 
 ad_params = {
     "function": "AD",

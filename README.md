@@ -12,14 +12,15 @@ Using API from Alpha Vantage and Quandl to train and test multiple machine learn
 It includes multiple technical indicators and external pricing information as features
 * ##### Technical Indicators
     
-    * 200 Day Exponential Moving Average (EMA) --open & close & high & low
-    * 20 Day Exponential Moving Average (EMA) --open & close & high & low
-    * Moving Average Convergence / Divergence (MACD) --open & close & high & low
+    * 200 Day Exponential Moving Average (EMA-200) 
+    * 20 Day Exponential Moving Average (EMA-20) 
+    * 9 Day Exponential Moving Average (EMA-9) -- **used as signal for MACD**
+    * Moving Average Convergence / Divergence (MACD) 
     * Stochastic Oscillator (STOCH)
-    * Relative Strength Index (RSI) --open & close & high & low
+    * Relative Strength Index (RSI) 
     * Commodity Channel Index (CCI)
     * Aroon Indicator (AROON)
-    * Bollinger Bands Values (BBANDS) --open & close & high & low
+    * Bollinger Bands Values (BBANDS) 
     * Chaikin A/D Line Values (AD)
     * On Balance Volume (OBV)
     
@@ -54,13 +55,42 @@ It includes multiple technical indicators and external pricing information as fe
         * <u>*If MACD line - 9-day EMA is positive, it signals buying option; if it's negative, 
         it signals selling option* </u>
         
-* ##### Stochastic Oscillator
+* ##### Stochastic Oscillator (similar to min-max scaling)
     * A stochastic oscillator is momentum indicator comparing a particular closing price of
     a security to a range of its prices over a certain period of time
     * It is used to generate overbought and oversold trading signals, utilizing a 0-100
     bounded range of values
+    * Formula: 
+        * %K = (C - L14) * 100 / (H14 - L14)
+            * C: The most recent closing price
+            * L14: The lowest price traded of the 14 previous trading sessions
+            * H14: The highest price traded during the same 14-day period
+            * %K: The current value of the stochastic indicator
+       
+    * Traditionally, readings over 80 are considered in the overbought range, and readings 
+    under 20 are considered oversold. However, these are not always indicative of impending
+    reversal; very strong trends can maintain overbought or oversold conditions for an extended
+    period.
+        * Traders should look to changes in the stochastic oscillator for clues about future 
+        trend shifts
    
-
+* ##### Relative Strength Index (RSI)
+    * Relative Strength Index describes a momentum indicator that measures the magnitude 
+    of recent price changes in order to evaluate overbought or oversold conditions in the 
+    price of a stock or other assets.
+    * The RSI is displayed as an oscillator, which is a line graph that moves between
+    two extremes. Its readings can range from 0 to 100.
+    * Traditional interpretation and usage of the RSI dictates that values of 70 or above
+    suggest that a security is becoming overbought or overvalued and may be primed for a
+    trend reversal or corrective price pullback. An RSI reading of 30 or below indicates an
+    oversold or undervalued condition.
+    * During an uptrend, the RSI tends to stay above 30 and should frequently hit 70. During
+    a downtrend, it is rare to see the RSI exceed 70, and the indicator frequently hits 30
+    or under.
+ 
+* ##### Commodity Channel Index (CCI)
+    *    
+  
 
 ***
 Index Time Series data as well as technical indicators are listed in the params.py file
