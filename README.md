@@ -13,7 +13,7 @@ It includes multiple technical indicators and external pricing information as fe
 * ##### Technical Indicators
     
     * 200 Day Exponential Moving Average (EMA) --open & close & high & low
-    * 200 Day Simple Moving Average (SMA) --open & close & high & low
+    * 20 Day Exponential Moving Average (EMA) --open & close & high & low
     * Moving Average Convergence / Divergence (MACD) --open & close & high & low
     * Stochastic Oscillator (STOCH)
     * Relative Strength Index (RSI) --open & close & high & low
@@ -32,6 +32,34 @@ It includes multiple technical indicators and external pricing information as fe
     * E-mini Crude Oil Futures, Continuous Contract #1 (QM1) (Front Month)
     * US Corporate Bond Index Yield
     * 10 Yr Note Futures, Continuous Contract #2 (TY2)
+***
+### Variable Explanations 
+
+* ##### 200 Day Exponential Moving Average
+    * Exponential Moving Average is a type of moving average that places a greater 
+   and signficance on the most recent data.
+    * Like all moving averages, this technical indicator is used to produce buy ans sell 
+   signals based on crossovers and divergences from the historical average.
+    * Traders often use several different EMA days, for instance, 20-day, 30-day, 90-day,
+   and 200-day moving average.
+   
+* ##### Moving Average Convergence / Divergence
+    * Moving Average Convergence Divergence is a trend-following momentum indicator that
+    shows the relationship between two moving averages of a security's price
+    * Traders use the MACD to identify when bullish or bearish momentum is high in order 
+    to identify entry and exit points for trades
+    * MACD is used by technical traders in stocks, bonds, commodities and FX markets
+    * MACD is calculated by subtracting 12-day EMA with 26-day EMA
+        * *signal line is plotted with the 9-day EMA*
+        * <u>*If MACD line - 9-day EMA is positive, it signals buying option; if it's negative, 
+        it signals selling option* </u>
+        
+* ##### Stochastic Oscillator
+    * A stochastic oscillator is momentum indicator comparing a particular closing price of
+    a security to a range of its prices over a certain period of time
+    * It is used to generate overbought and oversold trading signals, utilizing a 0-100
+    bounded range of values
+   
 
 
 ***

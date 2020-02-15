@@ -100,34 +100,34 @@ For Technical Indicators:
     Chaikin A/D Line Values (AD),
     On Balance Volume (OBV),
 '''
-sma_open_params_200 = {
+ema_open_params_20 = {
     "function": "SMA",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 20,
     "series_type": "open",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
 
-sma_close_params_200 = {
+ema_close_params_20 = {
     "function": "SMA",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 20,
     "series_type": "close",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
 
-sma_high_params_200 = {
+ema_high_params_20 = {
     "function": "SMA",
     "interval": "daily",
-    "time_period": 200,
+    "time_period": 20,
     "series_type": "high",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
 
-sma_low_params_200 = {
+ema_low_params_20 = {
     "function": "SMA",
     "interval": "daily",
     "time_period": 200,
