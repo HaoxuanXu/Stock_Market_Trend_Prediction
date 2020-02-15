@@ -34,7 +34,7 @@ It includes multiple technical indicators and external pricing information as fe
     * US Corporate Bond Index Yield
     * 10 Yr Note Futures, Continuous Contract #2 (TY2)
 ***
-### Variable Explanations 
+### Technical Indicator Explanations 
 
 * ##### 200 Day Exponential Moving Average
     * Exponential Moving Average is a type of moving average that places a greater 
@@ -100,13 +100,25 @@ It includes multiple technical indicators and external pricing information as fe
         time period
         
     * The one prerequisite to calculating the CCI is determining a time interval, which 
-    plays a key role in enhancing the accuracy of the CCI 
+    plays a key role in enhancing the accuracy of the CCI.
     * Traders must also adjust their CCI entry and exit thresholds based on the volatility 
     of the underlying security; for example, a ETF is traditionally less volatile than 
     an individual stock issue.
     
 * ##### Aroon Indicator
-    * 
+    * The Aroon indicator is a technical indicator that is used to identify trend changes in
+    the price of an asset, as well as the strength of that trend.
+    * The indicator measures the time between highs and the time between lows over a time
+    period
+        * The idea is that strong up-trends will regularly see new highs, and strong down-trends
+        will regularly see new lows. The indicator signals when this is happening, and when it isn't
+        
+    * The Aroon indicator is composed of two lines: an up line which measures the number of 
+    periods since a High, and a down line which measures the number of periods since a low.
+        * ***The indicator is typically applied to 25 periods of data, so the indicator is showing
+        how many periods it has been since a 25-period high or low.***
+    * When the Aroon Up is above the Aroon Down, it indicates bullish price behavior.
+    * When the Aroon Down is above the Aroon Up, it indicates bearish price behavior.
   
 
 ***

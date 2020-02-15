@@ -167,7 +167,7 @@ cci_params = {
 aroon_params = {
     "function": "AROON",
     "interval": "daily",
-    "time_period": 14,
+    "time_period": 25,
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
 }
