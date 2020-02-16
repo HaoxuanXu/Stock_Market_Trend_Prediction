@@ -14,7 +14,6 @@ It includes multiple technical indicators and external pricing information as fe
     
     * 200 Day Exponential Moving Average (EMA-200) 
     * 20 Day Exponential Moving Average (EMA-20) 
-    * 9 Day Exponential Moving Average (EMA-9) -- ***used as signal for MACD***
     * Moving Average Convergence / Divergence (MACD) 
     * Stochastic Oscillator (STOCH)
     * Relative Strength Index (RSI) 
@@ -31,7 +30,6 @@ It includes multiple technical indicators and external pricing information as fe
     * 30 Day Federal Funds Futures, Continuous Contract #16 (FF16) 
     * Gold Futures, Continuous Contract #2 (GC2)
     * E-mini Crude Oil Futures, Continuous Contract #1 (QM1) (Front Month)
-    * US Corporate Bond Index Yield
     * 10 Yr Note Futures, Continuous Contract #2 (TY2)
 ***
 ### Technical Indicator Explanations 

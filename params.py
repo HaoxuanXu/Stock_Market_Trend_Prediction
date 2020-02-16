@@ -73,21 +73,6 @@ crudeoil_futures_parameters = {
     "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
 }
 
-corporatebond_index_yield_parameters = {
-    "database_code": "ML",
-    "dataset_code": "USEY",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
-
-tenyrnote_futures_parameters = {
-    "database_code": "CHRIS",
-    "dataset_code": "CME_TY2",
-    "start_date": str(dt.datetime(year=dt.datetime.now().year - 20, month=dt.datetime.now().month,
-                                  day=dt.datetime.now().day)),
-    "end_date": str(dt.datetime.now().strftime("%Y-%m-%d"))
-}
 '''
 For Technical Indicators:
     200 Day Exponential Moving Average (EMA) --open & close & high & low,
@@ -101,7 +86,7 @@ For Technical Indicators:
 '''
 
 ema_close_20_params = {
-    "function": "SMA",
+    "function": "EMA",
     "interval": "daily",
     "time_period": 20,
     "series_type": "close",
@@ -109,19 +94,10 @@ ema_close_20_params = {
     "apikey": auth.apikey_av_premium
 }
 
-ema_close_200_params = {
+ema_close_50_params = {
     "function": "EMA",
     "interval": "daily",
-    "time_period": 200,
-    "series_type": "close",
-    "datatype":"csv",
-    "apikey": auth.apikey_av_premium
-}
-
-ema_close_9_params = {
-    "function": "EMA",
-    "interval": "daily",
-    "time_period": 9,
+    "time_period": 50,
     "series_type": "close",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
