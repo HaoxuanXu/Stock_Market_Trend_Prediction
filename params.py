@@ -85,8 +85,8 @@ For Technical Indicators:
     On Balance Volume (OBV),
 '''
 
-ema_close_20_params = {
-    "function": "EMA",
+sma_close_20_params = {
+    "function": "SMA",
     "interval": "daily",
     "time_period": 20,
     "series_type": "close",
@@ -94,10 +94,10 @@ ema_close_20_params = {
     "apikey": auth.apikey_av_premium
 }
 
-ema_close_50_params = {
-    "function": "EMA",
+sma_close_100_params = {
+    "function": "SMA",
     "interval": "daily",
-    "time_period": 50,
+    "time_period": 100,
     "series_type": "close",
     "datatype":"csv",
     "apikey": auth.apikey_av_premium
