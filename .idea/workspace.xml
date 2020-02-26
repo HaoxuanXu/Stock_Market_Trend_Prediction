@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="711fe033-b480-4472-b796-28c88b8bfe5c" name="Default Changelist" comment="adding if condition on the 'symbol' column">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Data_Cleaning-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Data_Cleaning-checkpoint.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ipynb_checkpoints/Feature_Engineering-checkpoint.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/.ipynb_checkpoints/Feature_Engineering-checkpoint.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Data_Cleaning.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Cleaning.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Feature_Engineering.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Feature_Engineering.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_extraction_pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_extraction_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var_heatmap.png" beforeDir="false" afterPath="$PROJECT_DIR$/var_heatmap.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
